@@ -12,9 +12,10 @@ class HomeController extends Controller
     }
 
     
-    public function propertyList($params)
+    public function propertyList(Request $request)
     {
-        $propertyList = PropertyList::whereI('mls', $params);
+
+        return view('propertyList.home');
         
     }
 }

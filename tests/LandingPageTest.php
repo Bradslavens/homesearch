@@ -20,8 +20,9 @@ class LandingPageTest extends TestCase
     public function testForm()
     {
         $this->visit('/')
-            ->press('Search')
-            ->seePageIsI('searchResults');
+            ->see('search')
+            ->type('92123', 'search_params')
+            ->press('Search');
     }
 
 }

@@ -13,4 +13,4 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('propertyList/{$params}','HomeController@propertyList');
+Route::get('propertyList', 'HomeController@propertyList');
