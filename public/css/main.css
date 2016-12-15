@@ -1,0 +1,17 @@
+/*font familys 
+header font-family: poiret-one, sans-serif;
+p font-family: droid-sans, sans-serif;
+more header s font-family: pt-sans-narrow, sans-serif;*/
+
+h1, h2, h3 
+{
+    font-family: pt-sans-narrow, sans-serif;
+}
+
+p 
+{
+    font-family: droid-sans, sans-serif;
+}
+
+/*import style sheets */
+@import url('home.css');

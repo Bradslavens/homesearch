@@ -16,4 +16,12 @@ class LandingPageTest extends TestCase
         $this->visit('/')
             ->see('Slavens Realty');
     }
+
+    public function testForm()
+    {
+        $this->visit('/')
+            ->press('Search')
+            ->seePageIsI('searchResults');
+    }
+
 }

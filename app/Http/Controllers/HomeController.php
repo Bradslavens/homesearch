@@ -10,4 +10,11 @@ class HomeController extends Controller
     {
         return view('home/welcome');
     }
+
+    
+    public function propertyList($params)
+    {
+        $propertyList = PropertyList::whereI('mls', $params);
+        
+    }
 }
