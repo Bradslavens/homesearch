@@ -15,6 +15,8 @@ class HomeController extends Controller
     public function propertyList(Request $request)
     {
 
+        // get list of properties based on search request
+
         return view('propertyList.home');
         
     }
