@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home/welcome');
+        return view('welcome');
     }
 
     
@@ -17,7 +17,7 @@ class HomeController extends Controller
 
         // get list of properties based on search request
 
-        return view('propertyList.home');
+        return view('home');
         
     }
 }

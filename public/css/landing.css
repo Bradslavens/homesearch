@@ -1,0 +1,137 @@
+
+            @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Khula');
+            
+            @import url('https://fonts.googleapis.com/css?family=Satisfy');
+            
+            body {
+                background-image: url("/images/one-small.jpg");
+                position: relative;
+                -ms-background-size: cover;
+                -o-background-size: cover;
+                -moz-background-size: cover;
+                -webkit-background-size: cover;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            
+            #container {
+                width: 90%;
+                box-sizing: border-box;
+                margin: 5vh auto;
+                min-height: 90vh;
+                display: block;
+                overflow: auto;
+                background-color: #e4edf4;
+                padding: 5vh;
+            }            
+            
+            #heading {
+                float: left;
+                clear: both;
+                margin: 3vh auto;
+            }
+            
+            #intro {
+                float: left;
+                clear: both;
+                font-family: 'Satisfy', cursive;
+                font-size: 4vh;
+            }
+            
+            h1 {
+                margin: 0;
+                font-family: 'Fjalla One', sans-serif;
+                font-size: 8vh;
+                float: left;
+                clear: both;
+            }
+            
+            p {
+                font-family: 'Khula', sans-serif;
+                font-size: 2vh;
+                float: left;
+                clear: both;
+            }
+            
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            
+            #form>label, #form>input {
+                font-family: 'Khula', sans-serif;
+                font-size: 3vh;
+                clear: both;
+                float: left;
+            }
+            
+            #form>input[type="text"] {
+                width: 100%;
+                height: 5vh;
+                background: white;
+                border: solid white 10px;
+                box-sizing: border-box;
+                padding: 1em;
+                font-size: 2.5vh;
+            }
+            
+            #form>input[type="submit"] {
+                color: white;
+                background-color: #bed470;
+                border: solid white 5px;
+                height: 3em;
+                width: 3em;
+                margin-top: 1em;
+            }
+            
+            nav {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: stretch;
+                float: left;
+                clear: both;
+                width: 100%;
+                box-sizing: border-box;
+                margin-top: 3vh;
+            }
+            
+            .items {
+                flex: 1;
+                text-align: center;
+                font-family: 'Khula', sans-serif;
+                height: 3vh;
+                line-height: 3vh;
+            }
+            
+            .items a {
+                text-decoration: none;
+            }
+            
+            footer {
+                float: left;
+                clear: both;
+                margin: auto;
+            }
+            
+            
+            @media only screen and (min-width : 768px){
+                #container {
+                    width: 40vw;
+                    position: absolute;
+                    left: 8vw;
+                }
+                
+                body {
+                    background-image: url("/images/one.jpg");
+                }
+                
+                nav {
+                    flex: 1;
+                    flex-direction: row;
+                }
+            }
