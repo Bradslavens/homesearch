@@ -36,3 +36,20 @@ $factory->define(App\PropertyList::class, function (Faker\Generator $faker)
     ];
 
 });
+
+$factory->define(App\Property::class, function (Faker\Generator $faker)
+{
+    return [
+        'L_ListingID' => $faker->randomNumber(),
+    ];
+
+});
+
+
+$factory->define(App\Image::class, function (Faker\Generator $faker)
+{
+    return [
+        'link' => $faker->url,
+    ];
+
+});

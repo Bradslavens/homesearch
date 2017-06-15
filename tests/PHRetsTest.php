@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Log;
 
 use troydavisson\phrets;
 
@@ -16,7 +17,7 @@ class PHRetsTest extends TestCase
     public function testPHRetsMeta()
     {
         $config = new \PHRETS\Configuration;
-        $config->setLoginUrl('https://rets-paragon.sandicor.com/rets/fnisrets.aspx/SANDICOR/login?rets-version=RETS/1.7.2')
+        $config->setLoginUrl(env('RETS_URL'))
                 ->setUsername(env('RETS_USER'))
                 ->setPassword(env('RETS_PASS'))
                 ->setRetsVersion('1.7.2');
