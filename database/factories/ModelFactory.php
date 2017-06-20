@@ -23,24 +23,18 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-
-$factory->define(App\PropertyList::class, function (Faker\Generator $faker)
-{
-    return [
-        'streetNumber' => $faker->buildingNumber,
-        'streetAddress' => $faker->streetName,
-        'city' => $faker->city,
-        'state' => $faker->state,
-        'price' => $faker->randomNumber(),
-        'mlsID' => $faker->randomNumber(),
-    ];
-
-});
-
 $factory->define(App\Property::class, function (Faker\Generator $faker)
 {
     return [
         'L_ListingID' => $faker->randomNumber(),
+        'L_AskingPrice' => $faker->randomNumber(),
+        'L_AddressNumber' => $faker->randomNumber(),
+        'L_AddressDirection' => $faker->word(),
+        'L_AddressStreet' => $faker->word(),
+        'L_Address2' => $faker->word(),
+        'L_City' => $faker->word(),
+        'L_State' => $faker->word(),
+        'L_Zip' => $faker->randomNumber(),
     ];
 
 });

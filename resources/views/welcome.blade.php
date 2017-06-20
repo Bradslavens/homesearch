@@ -18,12 +18,13 @@
                 <h1>Realty</h1>
                 <p><a href="#">Contact Us</a> for Buying, Selling or Leasing Residential Homes, up to 4 units in San Diego County.</p>
             </div>
-            <div id="form">
+            <form id="form" method="POST" action="{{route('listing.showListings')}}">
+                {{csrf_field()}}
                 <label for="form">Search Current Listings:</label>
-                <input type="text" placeholder="Enter an Address, City, State or Zip">
+                <input name="query" type="text" placeholder="Enter an MLS#, Address, City, State or Zip">
                 
-                <input type="submit" value="go!">
-            </div>
+                <input type="submit" name="go" value="go!">
+            </form>
             <nav>
                 <div class="items"><a href="#">About Us</a></div>
                 <div class="items"><a href="#">Contact Us</a></div>
@@ -34,10 +35,5 @@
                 <p>&copy;Slavens, Inc.</p>
             </footer>
         </div>
-        
-        <button onclick="getInfo()">Click me</button>
-        
-    <script src = "/js/address_autocomplete.js" ></script>
-
   </body>
 </html>

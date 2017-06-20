@@ -13,4 +13,5 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('propertyList', 'HomeController@propertyList');
+Route::resource('listing', 'ListingController');
+Route::post('listing/showListings', 'ListingController@showListings')->name('listing.showListings');
