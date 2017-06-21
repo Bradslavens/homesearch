@@ -18,36 +18,21 @@
     </header>
     
     <div class="listing-container">
-        <div class="property-container">
-            <img src="https://i.homeadore.com/2015/10/007-modern-house-craig-steere-architects.jpg">
-            
-            <div class="details">
-                <span class="price">$1,000,000</span>
-                <span class="beds">3 Bedroom / 2 Bath</span>
-                <address class="address">123 Main St., San Dieg, CA 92123</address>
-            </div>
+
+        @foreach ($listings as $listing)
         
-        </div>
-        
-        <div class="property-container">
-            <img src="https://s-media-cache-ak0.pinimg.com/736x/b5/32/0e/b5320e472fca65f0f82fad31b2b0f790.jpg">
+            <div class="property-container">
+                <img src="{{$listing->images->first()->link}}">
+                
+                <div class="details">
+                    <span class="price">{{$listing->L_AskingPrice}}</span>
+                    <span class="beds">3 Bedroom / 2 Bath</span>
+                    <address class="address">{{$listing->FullAddress}}</address>
+                </div>
             
-            <div class="details">
-                <span class="price">$1,000,000</span>
-                <span class="beds">3 Bedroom / 2 Bath</span>
-                <address class="address">123 Main St., San Dieg, CA 92123</address>
             </div>
-        </div>
+         @endforeach   
         
-        <div class="property-container">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS9H6Of2l0uiKaNnMWN6Mvy9v5MymeCt-MLTpLjW_kMGrE5GjC8w">
-            
-            <div class="details">
-                <span class="price">$1,000,000</span>
-                <span class="beds">3 Bedroom / 2 Bath</span>
-                <address class="address">123 Main St., San Dieg, CA 92123</address>
-            </div>
-        </div>
     </div>
     
     <footer>

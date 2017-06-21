@@ -13,6 +13,9 @@ class PropertyTableSeeder extends Seeder
     {
         //
         //
-        factory(\App\Property::class, 100)->create();
+        factory(\App\Property::class, 100)->create()
+            ->each(function ($p) {
+                $p->images()->save(factory(\App\Image::class)->make());
+            });
     }
 }
