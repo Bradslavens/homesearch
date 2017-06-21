@@ -104,26 +104,17 @@ class ListingController extends Controller
                 ->orWhere('L_Zip', 'like', '%'. $request->input('query') . '%')
                 ->get(); 
         }
-
-        $queryString = '%';
-        foreach ($query as $q) 
+        else
         {
-            $queryString .= $q . '%';
+            $queryString = '%';
+            foreach ($query as $q) 
+            {
+                $queryString .= $q . '%';
+            }
+
+            $listings = \App\Property::where('FullAddress', 'like', $queryString)->get();
         }
-
-        $listings = \App\Property::where('FullAddress', 'like', $queryString)->get();
-
-        dd($listings);
-
-        // $listings = \App\Property::where('L_ListingID', 'like', '%'. $request->input('query') . '%')
-        //     ->orWhere('L_AddressNumber', 'like', '%'. $request->input('query') . '%')
-        //     ->get();
-
-        // $listings = \App\Property::all();
-        dd(collect($listings));
-
-        // foreach ($listings as $key => $value) {
-        //     dd($value->L_ListingID);
-        // }
+        
+        return view('results', ['listings' => $listings]);
     }
 }

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Khula');
+            
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+
+body {
+    background: gray;
+    background-image: url("/images/two-small.jpg");
+    padding: 3vw;
+    border: solid white 3px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.listing-container {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+h1, h1:first-of-type + h2 {
+    margin: 0;
+    float: left;
+    clear: both;
+    color: white;
+}
+
+h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 8vh;
+}
+
+
+.property-container img {
+    width: 100%;
+}
+
+.details {
+    background-color: rgba(0,0,0,.5);
+}
+
+.price, .beds, .address, h1:first-of-type + h2, footer p {
+    font-family: 'Khula', sans-serif;
+    color: white;
+}
+
+footer {
+    background: black;
+    height: 1vh;
+}
+
+@media only screen and (min-width: 768px)
+{                
+    body {
+        background-image: url("/images/two.jpg");
+        position: relative;
+        border: none;
+    }
+    
+    header {
+        position: relative;
+        width: 20vw;
+        float: left;
+        clear: left;
+
+    } 
+    
+    .property-container {
+        width: 40vw;  
+        float: right;
+    }
+    
+    footer {
+        float: left;
+        clear: both;
+        width: 100%;
+    }
+
+    .listing-container {
+        float: right;
+        clear: right;
+        width: 70vw;
+}
+}
