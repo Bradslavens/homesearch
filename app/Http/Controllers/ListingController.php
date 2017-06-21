@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class ListingController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('web');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -83,10 +89,39 @@ class ListingController extends Controller
     }
 
     public function showListings(Request $request)
-    {
-        // $listings = \App\Property::where('L_ListingID', 'like', $request->query)->get();
+    {   
+        $trim1 = str_replace(',', ' ', $request->input('query'));
+        $trim2 = str_replace('.', ' ', $trim1);
+        $trim = preg_replace('/\s+/', ' ', $trim2);
 
-        // dd('here');
+        $query = explode(' ', $trim );
+
+        // dd(count($query));
+
+        if(count($query) == 1 )
+        {
+            $listings = \App\Property::where('L_ListingID', 'like', '%'. $request->input('query') . '%')
+                ->orWhere('L_Zip', 'like', '%'. $request->input('query') . '%')
+                ->get(); 
+        }
+
+        $queryString = '%';
+        foreach ($query as $q) 
+        {
+            $queryString .= $q . '%';
+        }
+
+        $listings = \App\Property::where('FullAddress', 'like', $queryString)->get();
+
+        dd($listings);
+
+        // $listings = \App\Property::where('L_ListingID', 'like', '%'. $request->input('query') . '%')
+        //     ->orWhere('L_AddressNumber', 'like', '%'. $request->input('query') . '%')
+        //     ->get();
+
+        // $listings = \App\Property::all();
+        dd(collect($listings));
+
         // foreach ($listings as $key => $value) {
         //     dd($value->L_ListingID);
         // }

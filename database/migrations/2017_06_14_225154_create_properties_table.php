@@ -16,6 +16,7 @@ class CreatePropertiesTable extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->increments('id');
             $table->string('L_ListingID');
+            $table->string('FullAddress');
             $table->integer('L_AskingPrice');
             $table->string('L_AddressNumber');
             $table->string('L_AddressDirection');

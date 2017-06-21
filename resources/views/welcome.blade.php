@@ -23,7 +23,7 @@
                 <label for="form">Search Current Listings:</label>
                 <input name="query" type="text" placeholder="Enter an MLS#, Address, City, State or Zip">
                 
-                <input type="submit" name="go" value="go!">
+                <input type="submit" value="go!">
             </form>
             <nav>
                 <div class="items"><a href="#">About Us</a></div>
