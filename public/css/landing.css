@@ -1,7 +1,4 @@
 
-            @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Khula');
-            
-            @import url('https://fonts.googleapis.com/css?family=Satisfy');
             
             body {
                 background-image: url("/images/one-small.jpg");
@@ -111,13 +108,6 @@
             .items a {
                 text-decoration: none;
             }
-            
-            footer {
-                float: left;
-                clear: both;
-                margin: auto;
-            }
-            
             
             @media only screen and (min-width : 768px){
                 #container {

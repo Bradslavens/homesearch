@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Khula');
-            
-@import url('https://fonts.googleapis.com/css?family=Satisfy');
 
 * {
     box-sizing: border-box;;
@@ -8,11 +5,14 @@
 
 body {
     background: gray;
-    background-image: url("/images/two-small.jpg");
+    background-image: url("/images/one-small.jpg");
     padding: 3vw;
     border: solid white 3px;
     background-repeat: no-repeat;
     background-size: cover;
+    float: left;
+    clear: both;
+    overflow: auto;
 }
 
 .listing-container {
@@ -47,20 +47,13 @@ h1 {
     color: white;
 }
 
-footer {
-    background: gray;
-    height: 40vh;
-    padding: 2vw;
-}
-
 @media only screen and (min-width: 768px)
 {                
     body {
-        background-image: url("/images/two.jpg");
+        background-image: url("/images/one.jpg");
         position: relative;
-        border: none;
-        background-repeat: repeat-x;
-        background-size: 50vh;
+        background-size: 100vw;
+        background-repeat: repeat-y;
     }
     
     header {
@@ -72,14 +65,8 @@ footer {
     } 
     
     .property-container {
-        width: 40vw;  
-        float: right;
-    }
-    
-    footer {
+        width: 40%;  
         float: left;
-        clear: both;
-        width: 100%;
     }
 
     .listing-container {

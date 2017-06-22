@@ -28,12 +28,9 @@
             <nav>
                 <div class="items"><a href="#">About Us</a></div>
                 <div class="items"><a href="#">Contact Us</a></div>
-                <div class="items"><a href="#">Careers</a></div>
+                <div class="items"><a href="{{route('careers')}}">Careers</a></div>
             </nav>
-            <footer>
-                <p>Slavens Realty, 3399 Ruffin Rd. #M2, San Diego, CA 92123 | CA-BRE License # 01522202</p>
-                <p>&copy;Slavens, Inc.</p>
-            </footer>
+            @include('partials.footer')
         </div>
   </body>
 </html>

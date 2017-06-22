@@ -33,7 +33,7 @@ class Kernel extends ConsoleKernel
             $time = Carbon::yesterday()->toAtomString();
 
             // $query = "(L_UpdateDate=". $time . "+)";
-            $query = '(L_StatusCatID=1),(L_AskingPrice=500000+)';
+            $query = '(L_StatusCatID=1)';
 
             // connect to RETS
             $config = new \PHRETS\Configuration;
@@ -51,11 +51,8 @@ class Kernel extends ConsoleKernel
             // search RETS and add to database
             
             Log::info('started query');
-
-
-            // $results = $rets->Search('Property', 'RE_1', '(ListPrice=5000000+)', ['Limit' => 1, 'Select' => 'L_ListingID']);
             
-            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 100, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip']]);
+            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 20000, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip']]);
             
             log::info('ended query');
 
@@ -107,7 +104,7 @@ class Kernel extends ConsoleKernel
 
             Log::info("updated property database with cron job");
 
-        })->hourlyAt(10);
+        })->daily();
     }
 
     /**
