@@ -33,7 +33,7 @@ class Kernel extends ConsoleKernel
             $time = Carbon::yesterday()->toAtomString();
 
             // $query = "(L_UpdateDate=". $time . "+)";
-            $query = "(L_StatusCatID=1)";
+            $query = '(L_StatusCatID=1),(L_AskingPrice=500000+)';
 
             // connect to RETS
             $config = new \PHRETS\Configuration;
@@ -51,20 +51,25 @@ class Kernel extends ConsoleKernel
             // search RETS and add to database
             
             Log::info('started query');
+
+
+            // $results = $rets->Search('Property', 'RE_1', '(ListPrice=5000000+)', ['Limit' => 1, 'Select' => 'L_ListingID']);
             
-            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 100, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip']]);
+            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 1, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip']]);
             
             log::info('ended query');
 
             foreach ($results as $r) 
             {
+                Log::info('listing id ' . $r['L_ListingID']);
+
                 // first see if the listing exits
                 
                 $property = \App\Property::where('L_ListingID', $r['L_ListingID'])->first();
 
-                Log::info('property count ' .$property->count()); 
+                Log::info('property count ' . $property); 
 
-                if($property->count() == 0)
+                if($property == null)
                 {
                     Log::info('property does not exist');
 
@@ -103,7 +108,7 @@ class Kernel extends ConsoleKernel
 
             Log::info("updated property database with cron job");
 
-        })->daily();
+        })->hourlyAt(25);
     }
 
     /**
