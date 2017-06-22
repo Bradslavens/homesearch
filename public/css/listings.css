@@ -2,6 +2,10 @@
             
 @import url('https://fonts.googleapis.com/css?family=Satisfy');
 
+* {
+    box-sizing: border-box;;
+}
+
 body {
     background: gray;
     background-image: url("/images/two-small.jpg");
@@ -44,8 +48,9 @@ h1 {
 }
 
 footer {
-    background: black;
-    height: 1vh;
+    background: gray;
+    height: 40vh;
+    padding: 2vw;
 }
 
 @media only screen and (min-width: 768px)
