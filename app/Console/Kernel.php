@@ -94,7 +94,7 @@ class Kernel extends ConsoleKernel
                     // fix the urls from the testing server
                     if(env('APP_ENV') == 'local')
                     {
-                        $url = preg_replace("/stageimage./", "IMG-", $object->getLocation());
+                        $url = preg_replace("/staged-image./", "IMG-", $object->getLocation());
                     }
                     else
                     {
@@ -108,7 +108,7 @@ class Kernel extends ConsoleKernel
 
             Log::info("updated property database with cron job");
 
-        })->hourlyAt(30);
+        })->hourlyAt(45);
     }
 
     /**
