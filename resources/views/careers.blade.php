@@ -42,7 +42,7 @@
                     <li>Pass a criminal background check (no criminal record)</li>
                 </ul>
 
-                <a href="#">Apply Now</a>
+                <a href="{{route('apply.create')}}">Apply Now</a>
 
             </article>
         </div>
@@ -71,7 +71,7 @@
                     <li>High Ethical Standards</li>
                 </ul>
 
-                <a href="#">Apply Now</a>
+                <a href="{{route('apply.create')}}">Apply Now</a>
 
             </article>
         </div>
