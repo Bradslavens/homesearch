@@ -52,7 +52,7 @@ class Kernel extends ConsoleKernel
             
             Log::info('started query');
             
-            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 1000, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip']]);
+            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 100, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip']]);
             
             log::info('ended query');
 
