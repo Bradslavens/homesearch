@@ -55,7 +55,7 @@ class Kernel extends ConsoleKernel
 
             // $results = $rets->Search('Property', 'RE_1', '(ListPrice=5000000+)', ['Limit' => 1, 'Select' => 'L_ListingID']);
             
-            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 1, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip']]);
+            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 100, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip']]);
             
             log::info('ended query');
 
@@ -108,7 +108,7 @@ class Kernel extends ConsoleKernel
 
             Log::info("updated property database with cron job");
 
-        })->hourlyAt(45);
+        })->hourlyAt(35);
     }
 
     /**

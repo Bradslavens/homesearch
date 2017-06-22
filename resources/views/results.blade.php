@@ -22,7 +22,7 @@
         @foreach ($listings as $listing)
         
             <div class="property-container">
-                @if($listing->images->first())
+                @if(is_object($listing->images->first()))
                 <img src="{{$listing->images->first()->link}}">
                 @endif
                 

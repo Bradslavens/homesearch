@@ -59,6 +59,8 @@ footer {
         background-image: url("/images/two.jpg");
         position: relative;
         border: none;
+        background-repeat: repeat-x;
+        background-size: 50vh;
     }
     
     header {
@@ -84,5 +86,5 @@ footer {
         float: right;
         clear: right;
         width: 70vw;
-}
+    }
 }
