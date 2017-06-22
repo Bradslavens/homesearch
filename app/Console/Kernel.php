@@ -61,20 +61,16 @@ class Kernel extends ConsoleKernel
 
             foreach ($results as $r) 
             {
-                Log::info('listing id ' . $r['L_ListingID']);
-
                 // first see if the listing exits
                 
                 $property = \App\Property::where('L_ListingID', $r['L_ListingID'])->first();
-
-                Log::info('property count ' . $property); 
 
                 if($property == null)
                 {
                     Log::info('property does not exist');
 
                     // add the property to the database
-                    \App\Property::create(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . ", " . $r['L_City']. ", " . $r['L_State'] . " " . $r['L_Zip']  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'L_Zip' => $r['L_Zip']]);
+                    $property = \App\Property::create(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . ", " . $r['L_City']. ", " . $r['L_State'] . " " . $r['L_Zip']  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'L_Zip' => $r['L_Zip']]);
                 }
                 else
                 {
@@ -82,6 +78,8 @@ class Kernel extends ConsoleKernel
                     Log::info('property already exists');
 
                     \App\Property::find($property->id)->update(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . ", " . $r['L_City']. ", " . $r['L_State'] . " " . $r['L_Zip']  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'L_Zip' => $r['L_Zip']]);
+
+                    $property = \App\Property::find($property->id);
                 }
 
 
@@ -90,11 +88,10 @@ class Kernel extends ConsoleKernel
 
                 foreach ($objects as $object) 
                 {   
-
                     // fix the urls from the testing server
                     if(env('APP_ENV') == 'local')
                     {
-                        $url = preg_replace("/staged-image./", "IMG-", $object->getLocation());
+                        $url = preg_replace("/stageimage./", "IMG-", $object->getLocation());
                     }
                     else
                     {
@@ -103,12 +100,14 @@ class Kernel extends ConsoleKernel
 
                     $image = \App\Image::create(['link' => $url, 'property_id' => $r['L_ListingID']]);
 
+                    $property->images()->save($image);
+
                 }
             }
 
             Log::info("updated property database with cron job");
 
-        })->hourlyAt(35);
+        })->hourlyAt(59);
     }
 
     /**
