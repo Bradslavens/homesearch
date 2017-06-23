@@ -22,7 +22,7 @@
 
     @yield('section')
     
-    @include('partials.footer')
+    @yield('footer')
         
   </body>
 </html>

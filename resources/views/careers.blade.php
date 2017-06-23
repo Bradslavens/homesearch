@@ -79,3 +79,7 @@
 
     @endsection
         
+    
+    @section('footer')
+        @include('partials.footer2')
+    @endsection

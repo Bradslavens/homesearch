@@ -83,6 +83,12 @@
             .items a {
                 text-decoration: none;
             }
+
+            img#footer-logo {
+                height: 5vh;
+                padding-right: 10px;
+                float: left;
+            }
             
             @media only screen and (min-width : 768px){
                 #container {

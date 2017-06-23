@@ -8,6 +8,15 @@
     <title>Slavens Realty</title>
 
     <link rel="stylesheet" type="text/css" href="/css/landing.css">
+    <style type="text/css">
+
+        img#footer-logo {
+                height: 5vh;
+                padding-right: 10px;
+                float: left;
+            }
+
+    </style>
 
   </head>
   <body>
@@ -20,7 +29,7 @@
             </div>
             <form id="form" method="POST" action="{{route('listing.showListings')}}">
                 {{csrf_field()}}
-                <label for="form">Search Current Listings:</label>
+                <label for="form">Search Listings:</label>
                 <input name="query" type="text" placeholder="Enter an MLS#, Address, City, State or Zip">
                 
                 <input type="submit" value="Go!">
