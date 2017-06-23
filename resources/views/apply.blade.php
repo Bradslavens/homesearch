@@ -16,6 +16,15 @@
         <h1>Slavens Realty</h1>
         <h2>Application</h2>
     </header>
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     
     <div id="careers-container">
         <form id="form" class="job-container" method="POST" action="{{route('apply.store')}}">

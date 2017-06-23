@@ -54,6 +54,20 @@ footer {
     height: 5vh;
 }
 
+.alert {
+    padding: 3vh;
+    border: solid 3px;
+    font-family: 'Spectral', serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.alert-danger {
+    background-color: white;
+    color: red;
+    border-color: red;
+}
+
 /*large screen*/
 @media only screen and (min-width: 768px )
 {

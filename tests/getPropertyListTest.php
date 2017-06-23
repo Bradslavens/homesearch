@@ -32,7 +32,7 @@ class getPropertyListTest extends TestCase
         $this->visit('/')
                 ->see('Slavens')
                 ->type('123 main', 'query')
-                ->press('go')
+                ->press('Go!')
                 ->seePageIs(route('listing.showListings'));
 
     }

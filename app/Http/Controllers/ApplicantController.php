@@ -40,6 +40,13 @@ class ApplicantController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+                'name' => 'required|max:255',
+                'email' => 'required|email',
+                'licenseNumber' => 'numeric',
+            ]);
+
+
         $applicant = new \App\Applicant;
         $applicant->name = $request->name;
         $applicant->licenseNumber = $request->licenseNumber;

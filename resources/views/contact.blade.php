@@ -17,6 +17,16 @@
         <h2>Contact Form</h2>
     </header>
 
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <ul>
         <li>Phone: 619-253-0529</li>
         <li>Address: 3399 Ruffin Rd. #M2, San Diego, CA 92123</li>
