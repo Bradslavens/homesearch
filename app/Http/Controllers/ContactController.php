@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Events\ContactMade;
 
 class ContactController extends Controller
 {
@@ -34,11 +35,14 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validation($request, [
+        $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',
             'comment' => 'max:255',
             ]);
+
+
+        $comment = new \App\Comment(['comment' => $request->comment]);
 
         // see if contact exist
         $contact = \App\Contact::where('name', $request->name)->first();
@@ -50,24 +54,25 @@ class ContactController extends Controller
             $contact->phone = $request->phone;
             $contact->save();
 
-            $contact->comments()->save(['comment' => $request->comment]);
+            $contact->comments()->save($comment);
         }
         else
         {
             $contact = new \App\Contact;
 
+            $contact->name = $request->name;
             $contact->email = $request->email;
             $contact->phone = $request->phone;
             $contact->save();
 
-            $contact->comments()->save(['comment' => $request->comment]);
+            $contact->comments()->save($comment);
         }
 
         event(new ContactMade($contact));
 
         session()->flash('message', 'Thank You for contacting us '. $contact->name . '. We will get back to you right away');
 
-        return view('thankYouContact', ['contact' => $contact]);
+        return view('thankyou');
         
     }
 

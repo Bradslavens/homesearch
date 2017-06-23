@@ -14,7 +14,7 @@ class ContactTest extends TestCase
             ->type('Tony Smith', 'name')
             ->type('b@example.com', 'email')
             ->type('hello there', 'comment')
-            ->press('send')
+            ->press('Send')
             ->see('Thank You');
     }
 }

@@ -11,14 +11,16 @@ class ThankYouForContactingUs extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $contact;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($contact)
     {
-        //
+        $this->contact = $contact;
     }
 
     /**
@@ -29,6 +31,6 @@ class ThankYouForContactingUs extends Mailable
     public function build()
     {
         return $this->from(env('BROKER_EMAIL'))
-        view('email.ThankYouForContactingUs');
+            ->view('mail.ThankYouForContactingUs');
     }
 }

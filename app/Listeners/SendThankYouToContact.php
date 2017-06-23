@@ -5,7 +5,7 @@ namespace App\Listeners;
 use App\Events\ContactMade;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Mail\ThankYouForContactionUs;
+use App\Mail\ThankYouForContactingUs;
 use Illuminate\Support\Facades\Mail;
 
 class SendThankYouToContact
@@ -28,6 +28,6 @@ class SendThankYouToContact
      */
     public function handle(ContactMade $event)
     {
-        Mail::to($event->email)->send(new ThankYouForContactionUs($event->contact));
+        Mail::to($event->contact->email)->send(new ThankYouForContactingUs($event->contact));
     }
 }
