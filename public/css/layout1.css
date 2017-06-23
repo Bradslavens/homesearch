@@ -45,6 +45,15 @@ footer {
     float: right;
     clear: right;
 }
+
+#message {
+    background-color: #bed470;
+    float: left;
+    margin: 0 auto;
+    clear: both;
+    height: 5vh;
+}
+
 /*large screen*/
 @media only screen and (min-width: 768px )
 {

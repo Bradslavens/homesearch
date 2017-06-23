@@ -3,15 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Events\PersonApplied;
 
-class ApplicantController extends Controller
+class ContactController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('web');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +23,7 @@ class ApplicantController extends Controller
      */
     public function create()
     {
-        return view('apply');
+        return view('contact');
     }
 
     /**
@@ -40,21 +34,41 @@ class ApplicantController extends Controller
      */
     public function store(Request $request)
     {
-        $applicant = new \App\Applicant;
-        $applicant->name = $request->name;
-        $applicant->licenseNumber = $request->licenseNumber;
-        $applicant->phone = $request->phone;
-        $applicant->email = $request->email;
-        $applicant->position = $request->position;
+        $this->validation($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'comment' => 'max:255',
+            ]);
 
-        $applicant->save();
+        // see if contact exist
+        $contact = \App\Contact::where('name', $request->name)->first();
 
-        event(new PersonApplied($applicant));
+        if($contact)
+        {
+            // update contact
+            $contact->email = $request->email;
+            $contact->phone = $request->phone;
+            $contact->save();
 
-        session()->flash('message', 'Thank You for Applying ' . $applicant->name . 'we respond to you shortley.');
+            $contact->comments()->save(['comment' => $request->comment]);
+        }
+        else
+        {
+            $contact = new \App\Contact;
 
-        return view('thankyou');
+            $contact->email = $request->email;
+            $contact->phone = $request->phone;
+            $contact->save();
 
+            $contact->comments()->save(['comment' => $request->comment]);
+        }
+
+        event(new ContactMade($contact));
+
+        session()->flash('message', 'Thank You for contacting us '. $contact->name . '. We will get back to you right away');
+
+        return view('thankYouContact', ['contact' => $contact]);
+        
     }
 
     /**

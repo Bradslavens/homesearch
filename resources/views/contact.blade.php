@@ -2,7 +2,7 @@
 
 
 @section('title')
-    <title>Slavens Realty Application</title>
+    <title>Slavens Realty Contact Form</title>
 @endsection
 
 @section('css')
@@ -14,11 +14,16 @@
 
     <header>
         <h1>Slavens Realty</h1>
-        <h2>Application</h2>
+        <h2>Contact Form</h2>
     </header>
+
+    <ul>
+        <li>Phone: 619-253-0529</li>
+        <li>Address: 3399 Ruffin Rd. #M2, San Diego, CA 92123</li>
+    </ul>
     
     <div id="careers-container">
-        <form id="form" class="job-container" method="POST" action="{{route('apply.store')}}">
+        <form id="form" class="job-container" method="POST" action="{{route('contact.store')}}">
             {{ csrf_field() }}
 
         <div class="form-group">
@@ -27,13 +32,8 @@
         </div>
 
         <div class="form-group">
-            <label for="License-Number">CA-BRE License Number (if applicable)</label>
-            <input type="text" class="form-control" name="licenseNumber" id="licenseNumber" placeholder="CA BRE License #">
-        </div>
-
-        <div class="form-group">
             <label for="Phone">Phone</label>
-            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone" required>
+            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone" >
         </div>
 
         <div class="form-group">
@@ -42,11 +42,11 @@
         </div>
 
         <div class="form-group">
-            <label for="position">Position</label>
-            <input type="text" class="form-control" name="position" id="position" placeholder="Position" required>
+            <label for="comment">Comment</label>
+            <textarea class="form-control" name="comment" id="comment" placeholder="comment"></textarea>
         </div>
 
-        <input type="submit" id="submit" value="Apply">
+        <input type="submit" id="submit" value="Send">
 
         </form>
     </div>

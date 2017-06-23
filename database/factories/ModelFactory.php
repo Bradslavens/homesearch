@@ -48,3 +48,16 @@ $factory->define(App\Image::class, function (Faker\Generator $faker)
     ];
 
 });
+
+
+$factory->define(App\Applicant::class, function (Faker\Generator $faker)
+{
+    return [
+        'name' => $faker->name,
+        'licenseNumber' => $faker->randomNumber,
+        'phone' => $faker->phone,
+        'email' => $faker->email,
+        'position' => $faker->word,
+    ];
+
+});

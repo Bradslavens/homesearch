@@ -19,3 +19,5 @@ Route::post('listing/showListings', 'ListingController@showListings')->name('lis
 Route::get('careers', 'CareersController@index')->name('careers');
 
 Route::resource('careers/apply', 'ApplicantController');
+
+Route::resource('contact', 'ContactController');
