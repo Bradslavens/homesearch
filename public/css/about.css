@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: floralwhite;
+    font-family: 'Khula', sans-serif;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: aquamarine;
+    width: 600px;
+}
+
+.realtor, .years, .local {
+    padding: 5px;
+    background-color: bisque;
+    border: solid brown 5px;
+}
+
+.about h4 {
+    font-weight: bold;
+}
+
+p, .about h4, blockquote  {
+    
+    padding: 1vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.name-address {
+    width: 600px;
+    font-family: 'Khula', sans-serif;
+}
+
+.local img {
+    float: left;
+    display: inline;
+    margin-right: 2vh;
+}
+

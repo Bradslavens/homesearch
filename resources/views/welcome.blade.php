@@ -10,12 +10,6 @@
     <link rel="stylesheet" type="text/css" href="/css/landing.css">
     <style type="text/css">
 
-        img#footer-logo {
-                height: 5vh;
-                padding-right: 10px;
-                float: left;
-            }
-
     </style>
 
   </head>
@@ -35,8 +29,8 @@
                 <input type="submit" value="Go!">
             </form>
             <nav>
-                <div class="items"><a href="#">About Us</a></div>
-                <div class="items"><a href="#">Contact Us</a></div>
+                <div class="items"><a href="about">About Us</a></div>
+                <div class="items"><a href="{{route('contact.create')}}">Contact Us</a></div>
                 <div class="items"><a href="{{route('careers')}}">Careers</a></div>
             </nav>
             @include('partials.footer')

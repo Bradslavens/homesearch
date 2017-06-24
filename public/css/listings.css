@@ -20,6 +20,12 @@ body {
     width: 100%;
 }
 
+.property-container {
+    background-color: #FFF;
+    border: solid;
+    border-color: #C5C7F6;
+}
+
 h1, h1:first-of-type + h2 {
     margin: 0;
     float: left;
@@ -34,11 +40,13 @@ h1 {
 
 
 .property-container img {
-    width: 100%;
+    display: block;
+    width: 20%;
+    float: left;
+    padding: 10px;
 }
 
 .details {
-    background-color: rgba(0,0,0,.5);
 }
 
 .price, .beds, .address, footer p {
@@ -46,8 +54,26 @@ h1 {
     color: white;
 }
 
+.price, .beds, .address {
+    color: #070D86;
+    display: block;
+    float: left;
+}
+
 h1:first-of-type + h2 {
     font-family: 'Khula', sans-serif;
+}
+
+.price {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-color: red;
+    float: left;
+    clear: right;
+}
+
+.beds {
+    float: left;
 }
 
 @media only screen and (min-width: 768px)

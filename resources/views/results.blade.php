@@ -27,7 +27,7 @@
                 @endif
                 
                 <div class="details">
-                    <span class="price">{{$listing->L_AskingPrice}}</span>
+                    <span class="price">$ {{number_format($listing->L_AskingPrice, 0)}}</span>
                     <span class="beds">3 Bedroom / 2 Bath</span>
                     <address class="address">{{$listing->FullAddress}}</address>
                 </div>

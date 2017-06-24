@@ -19,6 +19,25 @@
 
   </head>
   <body>
+  
+      <div class="nav-container">
+          <nav>
+              <div class="home">
+                  <a href="/">Home</a>
+              </div>
+              <div class="links">
+                  <div class="contact">
+                  <a href="{{route('contact.create')}}">Contact</a>
+                  </div>
+                  <div class="careers">
+                  <a href="{{route('careers')}}">Careers</a>
+                  </div>
+                  <div class="aboutUs">
+                  <a href="about">About</a>
+                  </div>
+              </div>
+          </nav>
+      </div>
 
     @yield('section')
     

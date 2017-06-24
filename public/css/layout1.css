@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 footer {
     font-family: 'Spectral', serif;
     font-size: .5em;
@@ -80,11 +86,47 @@ button {
 }
 
 
+/*flex stuff */
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+
+nav {
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family: 'Satisfy', cursive;
+}
+
+.links {
+    display: flex;
+}
+
+.careers, .aboutUs {
+    margin-left: 20px;
+}
+
+/*end flex stuff */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 
 /*large screen*/
 @media only screen and (min-width: 768px )
 {
     footer {
         font-size: .7em;
+    }
+
+    nav {
+        flex-direction: row;
     }
 }

@@ -26,11 +26,6 @@
             </ul>
         </div>
     @endif
-
-    <ul>
-        <li>Phone: 619-253-0529</li>
-        <li>Address: 3399 Ruffin Rd. #M2, San Diego, CA 92123</li>
-    </ul>
     
     <div id="careers-container">
         <form id="form" class="job-container" method="POST" action="{{route('contact.store')}}">

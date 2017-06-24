@@ -1,108 +1,106 @@
 
-            
-            body {
-                background-image: url("/images/one-small.jpg");
-                position: relative;
-                -ms-background-size: cover;
-                -o-background-size: cover;
-                -moz-background-size: cover;
-                -webkit-background-size: cover;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-            
-            #container {
-                width: 90%;
-                box-sizing: border-box;
-                margin: 5vh auto;
-                min-height: 90vh;
-                display: block;
-                overflow: auto;
-                background-color: #e4edf4;
-                padding: 5vh;
-            }            
-            
-            #heading {
-                float: left;
-                clear: both;
-                margin: 3vh auto;
-            }
-            
-            #intro {
-                float: left;
-                clear: both;
-                font-family: 'Satisfy', cursive;
-                font-size: 4vh;
-            }
-            
-            h1 {
-                margin: 0;
-                font-family: 'Fjalla One', sans-serif;
-                font-size: 8vh;
-                float: left;
-                clear: both;
-            }
-            
-            p {
-                font-family: 'Khula', sans-serif;
-                font-size: 2vh;
-                float: left;
-                clear: both;
-            }
-            
-            a {
-                text-decoration: none;
-                color: black;
-            }
-            
-            
-            nav {
-                display: -webkit-box;
-                display: -moz-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: stretch;
-                float: left;
-                clear: both;
-                width: 100%;
-                box-sizing: border-box;
-                margin-top: 3vh;
-            }
-            
-            .items {
-                flex: 1;
-                text-align: center;
-                font-family: 'Khula', sans-serif;
-                height: 3vh;
-                line-height: 3vh;
-            }
-            
-            .items a {
-                text-decoration: none;
-            }
+body {
+    background-image: url("/images/one-small.jpg");
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
-            img#footer-logo {
-                height: 5vh;
-                padding-right: 10px;
-                float: left;
-            }
-            
-            @media only screen and (min-width : 768px){
-                #container {
-                    width: 40vw;
-                    position: absolute;
-                    left: 8vw;
-                }
-                
-                body {
-                    background-image: url("/images/one.jpg");
-                }
-                
-                nav {
-                    flex: 1;
-                    flex-direction: row;
-                }
-            }
+#container {
+    width: 90%;
+    box-sizing: border-box;
+    margin: 5vh auto;
+    min-height: 90vh;
+    display: block;
+    overflow: auto;
+    background-color: #e4edf4;
+    padding: 5vh;
+}            
+
+#heading {
+    float: left;
+    clear: both;
+    margin: 3vh auto;
+}
+
+#intro {
+    float: left;
+    clear: both;
+    font-family: 'Satisfy', cursive;
+    font-size: 4vh;
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 8vh;
+    float: left;
+    clear: both;
+}
+
+p {
+    font-family: 'Khula', sans-serif;
+    font-size: 2vh;
+    float: left;
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+nav {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    float: left;
+    clear: both;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 3vh;
+}
+
+.items {
+    flex: 1;
+    text-align: center;
+    font-family: 'Khula', sans-serif;
+    height: 3vh;
+    line-height: 3vh;
+}
+
+.items a {
+    text-decoration: none;
+}
+
+img#footer-logo {
+    height: 5vh;
+    padding-right: 10px;
+    float: left;
+}
+
+#form {
+    clear: both;
+}
+@media only screen and (min-width : 768px){
+    #container {
+        width: 40vw;
+        position: absolute;
+        left: 8vw;
+    }
+    
+    body {
+        background-image: url("/images/one.jpg");
+    }
+    
+    nav {
+        flex: 1;
+        flex-direction: row;
+    }
+}

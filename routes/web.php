@@ -21,3 +21,8 @@ Route::get('careers', 'CareersController@index')->name('careers');
 Route::resource('careers/apply', 'ApplicantController');
 
 Route::resource('contact', 'ContactController');
+
+Route::get('about', function()
+{
+    return view('about');
+});
