@@ -21,10 +21,10 @@
                 <h1>Realty</h1>
                 <p><a href="#">Contact Us</a> for Buying, Selling or Leasing Residential Homes, up to 4 units in San Diego County.</p>
             </div>
-            <form id="form" method="POST" action="{{route('listing.showListings')}}">
-                {{csrf_field()}}
+            <form id="form" method="GET" action="{{route('listing.index')}}">
+                {{-- {{csrf_field()}} --}}
                 <label for="form">Search Listings:</label>
-                <input name="query" type="text" placeholder="Enter an MLS#, Address, City, State or Zip">
+                <input name="properyQuery" type="text" placeholder="Enter an MLS#, Address, City, State or Zip">
                 
                 <input type="submit" value="Go!">
             </form>

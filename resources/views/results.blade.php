@@ -37,6 +37,8 @@
         
     </div>
 
+    {{ $listings->links() }}
+
     @endsection
     
 

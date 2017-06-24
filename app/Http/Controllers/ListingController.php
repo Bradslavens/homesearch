@@ -8,19 +8,40 @@ use Carbon\Carbon;
 class ListingController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('web');
-    }
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $trim1 = str_replace(',', ' ', $request->properyQuery);
+        $trim2 = str_replace('.', ' ', $trim1);
+        $trim = preg_replace('/\s+/', ' ', $trim2);
+
+        $query = explode(' ', $trim );
+
+        // dd(count($query));
+
+        if(count($query) == 1 )
+        {
+            $listings = \App\Property::where('L_ListingID', 'like', '%'. $request->properyQuery . '%')
+                ->orWhere('L_Zip', 'like', '%'. $request->properyQuery . '%')->simplePaginate(3); 
+        }
+        else
+        {
+            $queryString = '%';
+            foreach ($query as $q) 
+            {
+                $queryString .= $q . '%';
+            }
+
+            $listings = \App\Property::where('FullAddress', 'like', $queryString)->simplePaginate(3);
+        }
+
+
+        return view('results', ['listings' => $listings]);
+
     }
 
     /**
@@ -91,7 +112,7 @@ class ListingController extends Controller
 
     public function showListings(Request $request)
     {   
-        $trim1 = str_replace(',', ' ', $request->input('query'));
+        $trim1 = str_replace(',', ' ', $request->properyQuery);
         $trim2 = str_replace('.', ' ', $trim1);
         $trim = preg_replace('/\s+/', ' ', $trim2);
 
@@ -101,9 +122,8 @@ class ListingController extends Controller
 
         if(count($query) == 1 )
         {
-            $listings = \App\Property::where('L_ListingID', 'like', '%'. $request->input('query') . '%')
-                ->orWhere('L_Zip', 'like', '%'. $request->input('query') . '%')
-                ->get(); 
+            $listings = \App\Property::where('L_ListingID', 'like', '%'. $request->properyQuery . '%')
+                ->orWhere('L_Zip', 'like', '%'. $request->properyQuery . '%')->simplePaginate(3); 
         }
         else
         {
@@ -113,9 +133,11 @@ class ListingController extends Controller
                 $queryString .= $q . '%';
             }
 
-            $listings = \App\Property::where('FullAddress', 'like', $queryString)->get();
+            $listings = \App\Property::where('FullAddress', 'like', $queryString)->simplePaginate(3);
         }
-        
+
+
         return view('results', ['listings' => $listings]);
     }
+
 }
