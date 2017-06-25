@@ -36,6 +36,10 @@ $factory->define(App\Property::class, function (Faker\Generator $faker)
         'L_City' => $faker->word(),
         'L_State' => $faker->word(),
         'L_Zip' => $faker->randomNumber(),
+        'LM_Int1_3' => $faker->randomNumber(),
+        'LM_Int2_3' => $faker->randomNumber(),
+        'LM_Int1_5' => $faker->randomNumber(),
+        'LM_Int4_1' => $faker->randomNumber(),
     ];
 
 });
@@ -44,7 +48,7 @@ $factory->define(App\Property::class, function (Faker\Generator $faker)
 $factory->define(App\Image::class, function (Faker\Generator $faker)
 {
     return [
-        'link' => $faker->url,
+        'link' => "http://placehold.it/800x800",
     ];
 
 });

@@ -110,34 +110,4 @@ class ListingController extends Controller
         //
     }
 
-    public function showListings(Request $request)
-    {   
-        $trim1 = str_replace(',', ' ', $request->properyQuery);
-        $trim2 = str_replace('.', ' ', $trim1);
-        $trim = preg_replace('/\s+/', ' ', $trim2);
-
-        $query = explode(' ', $trim );
-
-        // dd(count($query));
-
-        if(count($query) == 1 )
-        {
-            $listings = \App\Property::where('L_ListingID', 'like', '%'. $request->properyQuery . '%')
-                ->orWhere('L_Zip', 'like', '%'. $request->properyQuery . '%')->simplePaginate(3); 
-        }
-        else
-        {
-            $queryString = '%';
-            foreach ($query as $q) 
-            {
-                $queryString .= $q . '%';
-            }
-
-            $listings = \App\Property::where('FullAddress', 'like', $queryString)->simplePaginate(3);
-        }
-
-
-        return view('results', ['listings' => $listings]);
-    }
-
 }

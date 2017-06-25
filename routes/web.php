@@ -16,7 +16,6 @@ use Illuminate\Http\Request;
 Route::get('/', 'HomeController@index');
 
 Route::resource('listing', 'ListingController');
-Route::post('listing/showListings', 'ListingController@showListings')->name('listing.showListings');
 
 Route::get('careers', 'CareersController@index')->name('careers');
 

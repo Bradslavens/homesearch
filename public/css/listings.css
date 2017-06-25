@@ -1,105 +1,51 @@
-
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;;
 }
 
-body {
-    background-color: #e4edf4;
-    padding: 3vw;
-    border: solid white 3px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    float: left;
-    clear: both;
-    overflow: auto;
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
 }
 
-.listing-container {
-    float: left;
-    clear: both;
-    width: 100%;
-}
-
-.property-container {
-    background-color: #FFF;
-    border: solid;
-    border-color: #C5C7F6;
-}
-
-h1, h1:first-of-type + h2 {
-    margin: 0;
-    float: left;
-    clear: both;
-    color: #5d84e5;
-}
-
-h1 {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 8vh;
-}
-
-
-.property-container img {
+.responsive-image {
+    max-width: 100%;
     display: block;
-    width: 20%;
-    float: left;
-    padding: 10px;
 }
 
-.details {
+.pagination-container {
+    display: flex;
+    justify-content: center;
 }
 
-.price, .beds, .address, footer p {
-    font-family: 'Khula', sans-serif;
+.pagination {
+    max-width: 50%;
+}
+
+.pagination li {
+    background-color: #6899f3;
+    display: inline-block;
+    width: 100px;
+}
+
+.pagination li a {
     color: white;
 }
 
-.price, .beds, .address {
-    color: #070D86;
-    display: block;
-    float: left;
-}
+@media only screen and (min-width: 600px)
+{
+    .container {
+        display: flex;
 
-h1:first-of-type + h2 {
-    font-family: 'Khula', sans-serif;
-}
-
-.price {
-    font-size: 1.5em;
-    font-weight: bold;
-    font-color: red;
-    float: left;
-    clear: right;
-}
-
-.beds {
-    float: left;
-}
-
-@media only screen and (min-width: 768px)
-{                
-    body {
-        position: relative;
-        background-size: 100vw;
-        background-repeat: repeat-y;
     }
-    
-    header {
-        position: relative;
-        width: 20vw;
-        float: left;
-        clear: left;
 
-    } 
-    
-    .property-container {
-        width: 40%;  
-        float: left;
+    header {
+        width: 50%;
     }
 
     .listing-container {
-        float: right;
-        clear: right;
-        width: 70vw;
+        max-width: 50%;
     }
 }

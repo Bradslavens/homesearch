@@ -25,6 +25,10 @@ class CreatePropertiesTable extends Migration
             $table->string('L_City');
             $table->string('L_State');
             $table->string('L_Zip');
+            $table->string('LM_Int1_3'); // total bedrooms
+            $table->string('LM_Int2_3'); // full baths
+            $table->string('LM_Int1_5'); // 1/2 baths
+            $table->string('LM_Int4_1'); // estimated square feet
             $table->timestamps();
         });
     }

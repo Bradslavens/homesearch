@@ -52,7 +52,7 @@ class Kernel extends ConsoleKernel
             
             Log::info('started query');
             
-            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 20000, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip']]);
+            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 100, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1',]]);
             
             log::info('ended query');
 
@@ -67,14 +67,14 @@ class Kernel extends ConsoleKernel
                     Log::info('property does not exist');
 
                     // add the property to the database
-                    $property = \App\Property::create(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . ", " . $r['L_City']. ", " . $r['L_State'] . " " . $r['L_Zip']  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'L_Zip' => $r['L_Zip']]);
+                    $property = \App\Property::create(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . ", " . $r['L_City']. ", " . $r['L_State'] . " " . $r['L_Zip']  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'L_Zip' => $r['L_Zip'], 'LM_Int1_3' => $r['LM_Int1_3'],'LM_Int2_3' => $r['LM_Int2_3'],'LM_Int1_5' => $r['LM_Int1_5'],'LM_Int4_1' => $r['LM_Int4_1'],]);
                 }
                 else
                 {
 
                     Log::info('property already exists');
 
-                    \App\Property::find($property->id)->update(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . ", " . $r['L_City']. ", " . $r['L_State'] . " " . $r['L_Zip']  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'L_Zip' => $r['L_Zip']]);
+                    \App\Property::find($property->id)->update(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . ", " . $r['L_City']. ", " . $r['L_State'] . " " . $r['L_Zip']  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'LM_Int1_3' => $r['LM_Int1_3'],'LM_Int2_3' => $r['LM_Int2_3'],'LM_Int1_5' => $r['LM_Int1_5'],'LM_Int4_1' => $r['LM_Int4_1'],]);
 
                     $property = \App\Property::find($property->id);
                 }
