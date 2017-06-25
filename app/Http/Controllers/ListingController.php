@@ -15,7 +15,7 @@ class ListingController extends Controller
      */
     public function index(Request $request)
     {
-        $trim1 = str_replace(',', ' ', $request->properyQuery);
+        $trim1 = str_replace(',', ' ', $request->propertyQuery);
         $trim2 = str_replace('.', ' ', $trim1);
         $trim = preg_replace('/\s+/', ' ', $trim2);
 
@@ -25,8 +25,8 @@ class ListingController extends Controller
 
         if(count($query) == 1 )
         {
-            $listings = \App\Property::where('L_ListingID', 'like', '%'. $request->properyQuery . '%')
-                ->orWhere('L_Zip', 'like', '%'. $request->properyQuery . '%')->simplePaginate(3); 
+            $listings = \App\Property::where('L_ListingID', 'like', '%'. $request->propertyQuery . '%')
+                ->orWhere('L_Zip', 'like', '%'. $request->propertyQuery . '%')->simplePaginate(3); 
         }
         else
         {

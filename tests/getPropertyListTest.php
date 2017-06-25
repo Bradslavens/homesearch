@@ -31,9 +31,9 @@ class getPropertyListTest extends TestCase
     {
         $this->visit('/')
                 ->see('Slavens')
-                ->type('123 main', 'query')
+                ->type('123 main', 'propertyQuery')
                 ->press('Go!')
-                ->seePageIs(route('listing.showListings'));
+                ->seePageIs('http://localhost/listing?propertyQuery=123%20main');
 
     }
 

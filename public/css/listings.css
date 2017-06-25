@@ -10,6 +10,35 @@
     padding: 0 1rem;
 }
 
+
+h1, h1:first-of-type + h2 {
+    color: #5d84e5;
+}
+
+h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 8vh;
+}
+
+.details {
+    min-width: 100%;
+    border: red solid 1px;
+}
+
+.details a {
+    display: block;
+    background-color: #5d84e5;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    height: 40px;
+    width: 200px;
+    font-family: 'Fjalla One', sans-serif;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
 .responsive-image {
     max-width: 100%;
     display: block;
@@ -32,6 +61,55 @@
 
 .pagination li a {
     color: white;
+}
+
+
+.price, .beds, address, .sfeet, footer p {
+    font-family: 'Khula', sans-serif;
+    color: white;
+    min-width: 100%;
+}
+
+.price, .beds, address, .sfeet {
+    color: #070D86;
+    display: block;
+}
+
+h1:first-of-type + h2 {
+    font-family: 'Khula', sans-serif;
+}
+
+
+.price {
+    background-color: red;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    text-align: left;
+    padding: 1vh 1.3vh ;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.pagination {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pagination li {
+    display: inline-block;
+    padding: 20px;
+}
+
+li.disabled, .pagination li a:link , .pagination li a:visited , .pagination li a:hover , .pagination li a:active {
+    font-size: 2em;
+        
 }
 
 @media only screen and (min-width: 600px)

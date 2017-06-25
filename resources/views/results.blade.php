@@ -32,9 +32,7 @@
                             <span class="beds">{{$listing->LM_Int1_3}} beds / {{$listing->LM_Int2_3}} @if($listing->LM_Int1_5).{{$listing->LM_Int1_5}} @endif Baths</span>
                             <span class="sfeet">{{$listing->LM_Int4_1}} Estimated Square Feet</span>
                             <address>{{$listing->FullAddress}}</address>
-                        </div>
-                        <div class="request-tour">
-                            <a href="contact">Request A Tour</a>
+                            <a class="request-tour" href="{{route('contact.create')}}">Request A Tour</a>
                         </div>
                     
                     </div>

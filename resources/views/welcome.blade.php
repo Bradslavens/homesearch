@@ -24,7 +24,7 @@
             <form id="form" method="GET" action="{{route('listing.index')}}">
                 {{-- {{csrf_field()}} --}}
                 <label for="form">Search Listings:</label>
-                <input name="properyQuery" type="text" placeholder="Enter an MLS#, Address, City, State or Zip">
+                <input name="propertyQuery" type="text" placeholder="Enter an MLS#, Address, City, State or Zip">
                 
                 <input type="submit" value="Go!">
             </form>
