@@ -111,7 +111,7 @@ class Kernel extends ConsoleKernel
 
             Log::info("updated property database with cron job");
 
-        })->everyHour(40);
+        })->everyHourAt(40);
     }
 
     /**
