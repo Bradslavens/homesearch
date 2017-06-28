@@ -30,10 +30,10 @@ class Kernel extends ConsoleKernel
     {
         $schedule->call(function(){
 
-            $time = Carbon::yesterday()->toAtomString();
+            $yesterday = Carbon::yesterday()->toAtomString();
 
-            // $query = "(L_UpdateDate=". $time . "+)";
-            $query = '(L_StatusCatID=1)';
+            $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+)";
+            // $query = '(L_StatusCatID=1)';
 
             // connect to RETS
             $config = new \PHRETS\Configuration;
@@ -52,12 +52,13 @@ class Kernel extends ConsoleKernel
             
             Log::info('started query');
             
-            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 1000, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate',]]);
+            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 1, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate',]]);
             
             log::info('ended query');
 
             foreach ($results as $r) 
             {
+                Log::info('times ' . $yesterday . '- yesterday - ' . $r['L_ListingDate'] . '- listing date' );
                 // set the full address
                 $fullAddress = $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . ", " . $r['L_City']. ", " . $r['L_State'] . " " . $r['L_Zip'];
                 // 
@@ -108,7 +109,7 @@ class Kernel extends ConsoleKernel
 
             Log::info("updated property database with cron job");
 
-        })->hourlyAt(50);
+        })->everyMinute();
     }
 
     /**
