@@ -28,6 +28,7 @@ class CreatePropertiesTable extends Migration
             $table->string('LM_Int1_3')->nullable(); // total bedrooms
             $table->string('LM_Int2_3')->nullable(); // full baths
             $table->string('LM_Int1_5')->nullable(); // 1/2 baths
+            $table->string('LM_Int4_1')->nullable(); // 1/2 baths
             $table->string('L_UpdateDate'); // updated date
             $table->string('L_ListingDate'); // list date
             $table->timestamps();

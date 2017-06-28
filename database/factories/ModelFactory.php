@@ -40,6 +40,8 @@ $factory->define(App\Property::class, function (Faker\Generator $faker)
         'LM_Int2_3' => $faker->randomNumber(),
         'LM_Int1_5' => $faker->randomNumber(),
         'LM_Int4_1' => $faker->randomNumber(),
+        'L_UpdateDate' => $faker->date(),
+        'L_ListingDate' => $faker->date(),
     ];
 
 });
