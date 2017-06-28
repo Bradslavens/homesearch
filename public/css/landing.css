@@ -89,6 +89,17 @@ img#footer-logo {
 #form {
     clear: both;
 }
+
+#form input[type="submit"] {
+    color: white;
+    background-color: #bed470;
+    border: solid white .3rem;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+}
+
 @media only screen and (min-width : 768px){
     #container {
         width: 40vw;

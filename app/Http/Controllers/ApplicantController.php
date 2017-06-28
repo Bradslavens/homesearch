@@ -58,7 +58,7 @@ class ApplicantController extends Controller
 
         event(new PersonApplied($applicant));
 
-        session()->flash('message', 'Thank You for Applying ' . $applicant->name . 'we respond to you shortley.');
+        session()->flash('message', 'Thank You. Application sent for: '.$applicant->name . ' We will respond to you shortly.');
 
         return view('thankyou');
 
