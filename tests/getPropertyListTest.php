@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class getPropertyListTest extends TestCase
+class    extends TestCase
 {
     
     use DatabaseMigrations;
@@ -32,7 +32,7 @@ class getPropertyListTest extends TestCase
         $this->visit('/')
                 ->see('Slavens')
                 ->type('123 main', 'propertyQuery')
-                ->press('Go!')
+                ->press('SEARCH')
                 ->seePageIs('http://localhost/listing?propertyQuery=123%20main');
 
     }

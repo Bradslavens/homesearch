@@ -53,6 +53,7 @@ class ApplicantController extends Controller
         $applicant->phone = $request->phone;
         $applicant->email = $request->email;
         $applicant->position = $request->position;
+        $applicant->source = session('source');
 
         $applicant->save();
 

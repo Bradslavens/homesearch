@@ -17,7 +17,7 @@ Route::get('/', 'HomeController@index');
 
 Route::resource('listing', 'ListingController');
 
-Route::get('careers', 'CareersController@index')->name('careers');
+Route::get('careers/{source?}', 'CareersController@index')->name('careers');
 
 Route::resource('careers/apply', 'ApplicantController');
 

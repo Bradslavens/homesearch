@@ -20,6 +20,7 @@ class CreateApplicantsTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('position');
+            $table->string('source')->nullable();
             $table->timestamps();
         });
     }
