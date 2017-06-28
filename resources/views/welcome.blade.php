@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Slavens Realty</title>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Spectral');
+      @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Khula');            
+      @import url('https://fonts.googleapis.com/css?family=Satisfy');
+    </style>
+
 
     <link rel="stylesheet" type="text/css" href="/css/landing.css">
     <style type="text/css">
