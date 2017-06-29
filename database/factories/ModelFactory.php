@@ -43,8 +43,12 @@ $factory->define(App\Property::class, function (Faker\Generator $faker)
         'L_UpdateDate' => $faker->date(),
         'L_ListingDate' => $faker->date(),
 <<<<<<< HEAD
+<<<<<<< HEAD
         'L_StatusCatID' => 1,
         'LM_Char10_1' => 'SanDiego',
+=======
+        'L_Status' => '1_0,
+>>>>>>> parent of 17b5dd4... fixed query to search for L_Status
 =======
         'L_Status' => '1_0,
 >>>>>>> parent of 17b5dd4... fixed query to search for L_Status
