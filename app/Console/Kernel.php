@@ -32,8 +32,8 @@ class Kernel extends ConsoleKernel
 
             $yesterday = Carbon::yesterday()->toAtomString();
 
-            // $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+)";
-            $query = '(L_StatusCatID=1)';
+            $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+)";
+            // $query = '(L_StatusCatID=1)';`
             
 
             // connect to RETS
@@ -110,7 +110,7 @@ class Kernel extends ConsoleKernel
 
             Log::info("updated property database with cron job");
 
-        })->hourlyAt(07);
+        })->daily();
     }
 
     /**
