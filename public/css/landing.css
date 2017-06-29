@@ -98,6 +98,13 @@ img#footer-logo {
     display: inline-block;
     font-family: 'Fjalla One', sans-serif;
     text-align: center;
+    width: 70%;
+    padding: 5px;
+}
+
+#form input {
+    width: 100%;
+    padding: 10px;
 }
 
 @media only screen and (min-width : 768px){

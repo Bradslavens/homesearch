@@ -31,7 +31,7 @@
             </div>
             <form id="form" method="GET" action="{{route('listing.index')}}">
                 {{-- {{csrf_field()}} --}}
-                <label for="form">Search Listings:</label>
+                <label for="form"><h2>Search Listings:</h2></label>
                 <input name="propertyQuery" type="text" placeholder="Enter an MLS#, Address, City, State or Zip">
                 
                 <input type="submit" value="SEARCH >">
