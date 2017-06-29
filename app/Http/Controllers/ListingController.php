@@ -21,12 +21,16 @@ class ListingController extends Controller
 
         $query = explode(' ', $trim );
 
-        // dd(count($query));
-
         if(count($query) == 1 )
         {
-            $listings = \App\Property::where('L_ListingID', 'like', '%'. $request->propertyQuery . '%')
-                ->orWhere('L_Zip', 'like', '%'. $request->propertyQuery . '%')->simplePaginate(3); 
+            $listings = \App\Property::where([
+                    ['L_ListingID', 'like', '%'. $request->propertyQuery . '%'],
+                    ['L_StatusCatID', 1],
+                ])
+                ->orWhere([
+                    ['L_Zip', 'like', '%'. $request->propertyQuery . '%'],
+                    ['L_StatusCatID', 1],
+                ])->simplePaginate(3); 
         }
         else
         {
