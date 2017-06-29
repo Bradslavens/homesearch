@@ -25,11 +25,11 @@ class ListingController extends Controller
         {
             $listings = \App\Property::where([
                     ['L_ListingID', 'like', '%'. $request->propertyQuery . '%'],
-                    ['L_StatusCatID', 1],
+                    ['L_Status','like', '%1_%'],
                 ])
                 ->orWhere([
                     ['L_Zip', 'like', '%'. $request->propertyQuery . '%'],
-                    ['L_StatusCatID', 1],
+                    ['L_Status','like', '%1_%'],
                 ])->simplePaginate(3); 
         }
         else
