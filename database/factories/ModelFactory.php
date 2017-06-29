@@ -42,7 +42,7 @@ $factory->define(App\Property::class, function (Faker\Generator $faker)
         'LM_Int4_1' => $faker->randomNumber(),
         'L_UpdateDate' => $faker->date(),
         'L_ListingDate' => $faker->date(),
-        'L_Status' => '1_0,
+        'L_Status' => '1_0',
     ];
 
 });

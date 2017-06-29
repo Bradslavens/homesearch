@@ -16,7 +16,7 @@ class AddStatusColumnToPropertiesTable extends Migration
         // add status column L_StatusCatID
         Schema::table('properties', function(Blueprint $table)
         {
-            $table->integer('L_Status')->nullable();
+            $table->string('L_Status')->nullable();
         });
     }
 
