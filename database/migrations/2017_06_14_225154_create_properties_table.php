@@ -32,6 +32,7 @@ class CreatePropertiesTable extends Migration
             $table->string('L_UpdateDate')->nullable(); // updated date , not all have an update date
             $table->string('L_ListingDate'); // list date
             $table->integer('L_StatusCatID');
+            $table->string('LM_Char10_1');
             $table->timestamps();
         });
     }
