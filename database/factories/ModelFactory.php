@@ -26,8 +26,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\Property::class, function (Faker\Generator $faker)
 {
     return [
-        'L_ListingID' => $faker->randomNumber(),
-        'FullAddress' => $faker->randomNumber() . " " . $faker->word() . " " . $faker->word . ", " . $faker->word() . ", " . $faker->word . "  " . $faker->randomNumber(),
+        'L_ListingID' => $faker->randomNumber(7),
+        'FullAddress' => $faker->randomNumber() . " " . $faker->word() . " " . $faker->word . ", " . $faker->word() . ", " . $faker->word . "  " . '92109',
         'L_AskingPrice' => $faker->randomNumber(),
         'L_AddressNumber' => $faker->randomNumber(),
         'L_AddressDirection' => $faker->word(),

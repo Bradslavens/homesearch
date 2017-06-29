@@ -21,7 +21,7 @@ class ListingController extends Controller
 
         $query = explode(' ', $trim );
 
-        if(count($query) == 1 )
+        if(count($query) == 1 && strlen($query[0]) > 4 )
         {
             $listings = \App\Property::where([
                     ['L_ListingID', 'like', '%'. $request->propertyQuery . '%'],
