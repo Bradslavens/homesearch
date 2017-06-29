@@ -43,7 +43,8 @@ $factory->define(App\Property::class, function (Faker\Generator $faker)
         'L_UpdateDate' => $faker->date(),
         'L_ListingDate' => $faker->date(),
         'LM_Char10_1' => 'SanDiego',
-        'L_Status' => '1_0',
+        'L_Status' => 'ACTIVE',
+        'L_StatusCatID' => 1,
     ];
 
 });

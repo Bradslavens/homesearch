@@ -33,6 +33,7 @@ class CreatePropertiesTable extends Migration
             $table->string('L_ListingDate'); // list date
             $table->string('L_Status');
             $table->string('LM_Char10_1')->nullable();
+            $table->string('L_StatusCatID');
             $table->timestamps();
         });
     }
