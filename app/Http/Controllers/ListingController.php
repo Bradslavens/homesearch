@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
+use \App\Property;
+
 class ListingController extends Controller
 {
 
@@ -23,7 +25,7 @@ class ListingController extends Controller
 
         if(count($query) == 1 && strlen($query[0]) > 4 )
         {
-            $listings = \App\Property::where([
+            $listings = Property::where([
                     ['L_ListingID', 'like', '%'. $request->propertyQuery . '%'],
                     ['L_StatusCatID', 'Active'],
                 ])
@@ -40,11 +42,14 @@ class ListingController extends Controller
                 $queryString .= $q . '%';
             }
 
-            $listings = \App\Property::where('FullAddress', 'like', $queryString)->simplePaginate(3);
+            $listings = Property::where('FullAddress', 'like', $queryString)->simplePaginate(3);
         }
 
 
-        return view('results', ['listings' => $listings]);
+        $pq = urlencode($request->propertyQuery);
+
+
+        return view('results', ['listings' => $listings, 'propertyQuery' => $pq]);
 
     }
 

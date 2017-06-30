@@ -49,7 +49,7 @@
     
 
     <div class="pagination-container">
-        {{ $listings->links() }}
+        {{ $listings->appends(['propertyQuery' => $propertyQuery])->links() }}
     </div>
 
     @endsection
