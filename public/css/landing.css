@@ -51,6 +51,8 @@ table {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
 }
 
 /*end reset*/
@@ -76,6 +78,7 @@ p {
 #intro {
     font-family: 'Satisfy', cursive;
     font-size: 4vh;
+    margin-bottom: 1vh;
 }
 
 h1 {
@@ -92,21 +95,29 @@ label h2 {
 input[type="search"] {
     width: 100%;
     margin: 2vh 0;
+    padding: 1vh;
 }
 
 input[type="submit"] {
     margin-bottom: 2vh;
     color: #2a4d7f;
     font-family: 'Khula', sans-serif;
-    padding: .5vh 2vh;   
+    padding-top: 1vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
     background-color: rgba(255,255,255, .5);
     border-style: none;
     border: #2a4d7f solid 2px;
 }
 
+
 nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .items a {
