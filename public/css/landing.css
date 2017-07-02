@@ -1,4 +1,124 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*end reset*/
+
+body {
+    background-image: url("/images/one-small.jpg");
+    background-size: cover;
+    padding: 5%;
+}
+
+#container {
+    padding: 5%;
+    background-color: #e4edf4;
+    max-width: 500px;
+}
+
+p {
+    font-family: 'Khula', sans-serif;
+    font-size: 2vh;
+    margin-top: 2vh;
+}
+
+#intro {
+    font-family: 'Satisfy', cursive;
+    font-size: 4vh;
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 8vh;
+}
+
+label h2 {
+    font-family: 'Khula', sans-serif;
+    margin-top: 2vh;
+}
+
+input[type="search"] {
+    width: 100%;
+    margin: 2vh 0;
+}
+
+input[type="submit"] {
+    margin-bottom: 2vh;
+    color: #2a4d7f;
+    font-family: 'Khula', sans-serif;
+    padding: .5vh 2vh;   
+    background-color: rgba(255,255,255, .5);
+    border-style: none;
+    border: #2a4d7f solid 2px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.items a {
+    text-decoration: none;
+    font-family: 'Khula', sans-serif;
+    color: #2a4d7f;
+    font-size: 2vh;
+
+}
+
+
+/*
 body {
     background-image: url("/images/one-small.jpg");
     position: relative;
@@ -122,4 +242,4 @@ img#footer-logo {
         flex: 1;
         flex-direction: row;
     }
-}
+}*/

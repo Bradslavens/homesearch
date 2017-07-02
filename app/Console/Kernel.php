@@ -32,9 +32,9 @@ class Kernel extends ConsoleKernel
 
             $yesterday = Carbon::yesterday()->toAtomString();
 
-            $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+)";
+            // $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+)";
             // $query = '(L_Status=1_0,1_1,1_2),(LM_Char10_1=SanDiego)';
-            // $query = '(L_StatusCatID=1)';
+            $query = '(L_StatusCatID=1)';
             
 
             // connect to RETS

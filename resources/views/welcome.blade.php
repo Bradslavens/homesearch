@@ -32,16 +32,16 @@
             <form id="form" method="GET" action="{{route('listing.index')}}">
                 {{-- {{csrf_field()}} --}}
                 <label for="form"><h2>Search Listings:</h2></label>
-                <input name="propertyQuery" type="text" placeholder="Enter an MLS#, Address, City, State or Zip">
+                <input name="propertyQuery" type="search" placeholder="Enter an MLS#, Address, City, State or Zip">
                 
-                <input type="submit" value="SEARCH >">
+                <input type="submit" value="SEARCH">
             </form>
             <nav>
                 <div class="items"><a href="about">About Us</a></div>
                 <div class="items"><a href="{{route('contact.create')}}">Contact Us</a></div>
                 <div class="items"><a href="{{route('careers')}}">Careers</a></div>
             </nav>
-            @include('partials.footer')
+            {{-- @include('partials.footer') --}}
         </div>
   </body>
 </html>
