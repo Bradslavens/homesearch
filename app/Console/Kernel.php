@@ -54,9 +54,13 @@ class Kernel extends ConsoleKernel
             
             Log::info('started query');
             
-            $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 60000, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate', 'L_Status', 'L_StatusCatID' ], 'Offset' => 500]);
+            // $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 5000, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate', 'L_Status', 'L_StatusCatID' ], 'Offset' => 2400,]);
             
-            log::info('ended query');
+             $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 10, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate', 'L_Status', 'L_StatusCatID' ], 'Count' => 2, ]);
+
+
+             // log::info('ended query - count = ');
+             log::info('ended query - count = ' . $results->getTotalResultsCount());
 
             foreach ($results as $r) 
             {
@@ -111,7 +115,7 @@ class Kernel extends ConsoleKernel
 
             Log::info("updated property database with cron job");
 
-        })->dailyAt('08:11');
+        })->hourlyAt(17);
     }
 
     /**
