@@ -53,69 +53,85 @@ class Kernel extends ConsoleKernel
             // search RETS and add to database
             
             Log::info('started query');
+
+            // set limit
+            $limit = 2000;
             
             // $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 5000, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate', 'L_Status', 'L_StatusCatID' ], 'Offset' => 2400,]);
             
-             $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 10, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate', 'L_Status', 'L_StatusCatID' ], 'Count' => 2, ]);
+            $results1 = $rets->Search('Property', 'RE_1', $query, ['select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate', 'L_Status', 'L_StatusCatID' ], 'Count' => 2, 'Format' => 'COMPACT-DECODED', 'PropertyQueryType=DMQL2',]);
 
 
              // log::info('ended query - count = ');
-             log::info('ended query - count = ' . $results->getTotalResultsCount());
+             log::info('ended query - count = ' . $results1->getTotalResultsCount());
 
-            foreach ($results as $r) 
-            {
-                Log::info('times ' . $yesterday . '- yesterday - ' . $r['L_ListingDate'] . '- listing date' );
-                // set the full address
-                $fullAddress = $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . ", " . $r['L_City']. ", " . $r['L_State'] . " " . $r['L_Zip'];
-                // 
-                // $fullAddress = $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . " " . $r['L_City']. " " . $r['L_State'] . " " . $r['L_Zip'];
-                // see if the listing exits
-                
-                $property = \App\Property::where('L_ListingID', $r['L_ListingID'])->first();
+             $count = $results1->getTotalResultsCount() + 100;
 
-                if($property == null)
+             for($i=0; $i < $count; $i+=$limit) //($count + 500)
+             {
+                $o = $i+1; // adjusted offset
+
+                Log::info('o = ' . $o);
+
+                $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => $limit, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate', 'L_Status', 'L_StatusCatID' ], 'Offset' => $o, 'Format' => 'COMPACT-DECODED', 'PropertyQueryType=DMQL2',]);
+
+                foreach ($results as $r) 
                 {
-                    Log::info('property does not exist');
+                    Log::info('times ' . $yesterday . '- yesterday - ' . $r['L_ListingDate'] . '- listing date' );
+                    // set the full address
+                    $fullAddress = $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . ", " . $r['L_City']. ", " . $r['L_State'] . " " . $r['L_Zip'];
+                    // 
+                    // $fullAddress = $r['L_AddressNumber'] . " " . $r['L_AddressDirection'] . " " . $r['L_AddressStreet'] . " " . $r['L_City']. " " . $r['L_State'] . " " . $r['L_Zip'];
+                    // see if the listing exits
+                    
+                    $property = \App\Property::where('L_ListingID', $r['L_ListingID'])->first();
 
-                    // add the property to the database
-                    $property = \App\Property::create(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $fullAddress  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'L_Zip' => $r['L_Zip'], 'LM_Int1_3' => $r['LM_Int1_3'],'LM_Int2_3' => $r['LM_Int2_3'],'LM_Int1_5' => $r['LM_Int1_5'],'LM_Int4_1' => $r['LM_Int4_1'], 'L_UpdateDate' => $r['L_UpdateDate'], 'L_ListingDate' => $r['L_ListingDate'], 'L_Status' => $r['L_Status'], 'L_StatusCatID' => $r['L_StatusCatID'], ]);
-                }
-                else
-                {
-
-                    Log::info('property already exists');
-
-                    \App\Property::find($property->id)->update(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $fullAddress  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'LM_Int1_3' => $r['LM_Int1_3'],'LM_Int2_3' => $r['LM_Int2_3'],'LM_Int1_5' => $r['LM_Int1_5'],'LM_Int4_1' => $r['LM_Int4_1'], 'L_UpdateDate' => $r['L_UpdateDate'], 'L_ListingDate' => $r['L_ListingDate'], 'L_Status' => $r['L_Status'], 'L_StatusCatID' => $r['L_StatusCatID'], ]);
-
-                    $property = \App\Property::find($property->id);
-                }
-
-
-                // add the property images to the images database
-                $objects = $rets->GetObject('Property', 'Photo', $r['L_ListingID'], '*',  1);
-
-                foreach ($objects as $object) 
-                {   
-                    // fix the urls from the testing server
-                    if(env('APP_ENV') == 'local')
+                    if($property == null)
                     {
-                        $url = preg_replace("/stageimage./", "IMG-", $object->getLocation());
+                        Log::info('property does not exist');
+
+                        // add the property to the database
+                        $property = \App\Property::create(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $fullAddress  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'L_Zip' => $r['L_Zip'], 'LM_Int1_3' => $r['LM_Int1_3'],'LM_Int2_3' => $r['LM_Int2_3'],'LM_Int1_5' => $r['LM_Int1_5'],'LM_Int4_1' => $r['LM_Int4_1'], 'L_UpdateDate' => $r['L_UpdateDate'], 'L_ListingDate' => $r['L_ListingDate'], 'L_Status' => $r['L_Status'], 'L_StatusCatID' => $r['L_StatusCatID'], ]);
                     }
                     else
                     {
-                        $url = $object->getLocation();
+
+                        Log::info('property already exists');
+
+                        \App\Property::find($property->id)->update(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $fullAddress  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'LM_Int1_3' => $r['LM_Int1_3'],'LM_Int2_3' => $r['LM_Int2_3'],'LM_Int1_5' => $r['LM_Int1_5'],'LM_Int4_1' => $r['LM_Int4_1'], 'L_UpdateDate' => $r['L_UpdateDate'], 'L_ListingDate' => $r['L_ListingDate'], 'L_Status' => $r['L_Status'], 'L_StatusCatID' => $r['L_StatusCatID'], ]);
+
+                        $property = \App\Property::find($property->id);
                     }
 
-                    $image = \App\Image::create(['link' => $url, 'property_id' => $r['L_ListingID']]);
 
-                    $property->images()->save($image);
+                    // add the property images to the images database
+                    $objects = $rets->GetObject('Property', 'Photo', $r['L_ListingID'], '*',  1);
 
+                    foreach ($objects as $object) 
+                    {   
+                        // fix the urls from the testing server
+                        if(env('APP_ENV') == 'local')
+                        {
+                            $url = preg_replace("/stageimage./", "IMG-", $object->getLocation());
+                        }
+                        else
+                        {
+                            $url = $object->getLocation();
+                        }
+
+                        $image = \App\Image::create(['link' => $url, 'property_id' => $r['L_ListingID']]);
+
+                        $property->images()->save($image);
+
+                    }
                 }
-            }
+
+             }
+             // end for loop
 
             Log::info("updated property database with cron job");
 
-        })->hourlyAt(17);
+        })->dailyAt("12:45");
     }
 
     /**
