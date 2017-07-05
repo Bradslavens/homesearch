@@ -24,7 +24,7 @@
         <div id="container">
             <div id="heading">
                 <p id="intro">We Are</p>
-                <h1 style="background-color: red; color: white;">Warning! Page Under construction , do not use, information not accurate.. Thanks :)</h1>
+                {{-- <h1 style="background-color: red; color: white;">Warning! Page Under construction , do not use, information not accurate.. Thanks :)</h1> --}}
                 <h1>Slavens</h1>
                 <h1>Realty</h1>
                 <p><a href="#">Contact Us</a> for Buying, Selling or Leasing Residential Homes, up to 4 units in San Diego County.</p>
