@@ -32,9 +32,9 @@ class Kernel extends ConsoleKernel
 
             $yesterday = Carbon::yesterday()->toAtomString();
 
-            // $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+)";
+            $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+)";
             // $query = '(L_Status=1_0,1_1,1_2),(LM_Char10_1=SanDiego)';
-            $query = '(L_StatusCatID=1)';
+            // $query = '(L_StatusCatID=1)';
             
 
             // connect to RETS
@@ -65,9 +65,9 @@ class Kernel extends ConsoleKernel
              // log::info('ended query - count = ');
              log::info('ended query - count = ' . $results1->getTotalResultsCount());
 
-             $count = $results1->getTotalResultsCount() + 100;
+             $count = $results1->getTotalResultsCount();
 
-             for($i=0; $i < $count; $i+=$limit) //($count + 500)
+             for($i=0; $i <= $count; $i+=$limit) //($count + 500)
              {
                 $o = $i+1; // adjusted offset
 
@@ -131,7 +131,9 @@ class Kernel extends ConsoleKernel
 
             Log::info("updated property database with cron job");
 
-        })->dailyAt("12:45");
+            $rets->Disconnect();
+
+        })->dailyAt("07:00");
     }
 
     /**

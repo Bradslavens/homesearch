@@ -44,6 +44,8 @@ class PHRetsTest extends TestCase
 
         $fields = $rets->GetTableMetadata('Property', 'RE_1');
 
+        // $rets->Disconnect();
+
     }
 
     public function testPHRetsSearch()
@@ -68,20 +70,9 @@ class PHRetsTest extends TestCase
             $objects = $rets->GetObject('Property', 'Photo', $r['L_ListingID'], '*',  1);
 
             $this->assertContains(".JPG", $objects[0]->getLocation());
-
-            // foreach ($objects as $object) 
-            // {
-            //     if(env('APP_ENV') == 'testing')
-            //     {
-            //         $url = preg_replace("/stageimage./", "IMG-", $object->getLocation());
-            //         var_dump($url); // FOR TESTING ONLY
-            //     }
-            //     else
-            //     {
-            //         var_dump($object->getLocation());
-            //     }
-
-            // }
         }
+
+        
+        $rets->Disconnect();
     }
 }
