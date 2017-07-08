@@ -129,6 +129,13 @@ nav {
 
 }
 
+@media only screen and (min-width: 600px)
+{
+    body {
+        background-image: url('/images/one.jpg');
+    }
+}
+
 
 /*
 body {
