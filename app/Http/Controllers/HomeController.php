@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Property;
+
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $listingCount = Property::all()->count();
+
+        return view('welcome', ['listingCount' => $listingCount]);
     }
 
     
