@@ -44,10 +44,6 @@
     </div>
     {{-- container --}}
 
-
-    
-    
-
     <div class="pagination-container">
         {{ $listings->appends(['propertyQuery' => $propertyQuery])->links() }}
     </div>
