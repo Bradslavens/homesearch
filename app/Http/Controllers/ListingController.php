@@ -42,7 +42,7 @@ class ListingController extends Controller
                 $queryString .= $q . '%';
             }
 
-            $listings = Property::where('FullAddress', 'like', $queryString)->simplePaginate(3);
+            $listings = Property::where('FullAddress', 'like', $queryString)->Paginate(3);
         }
 
 
