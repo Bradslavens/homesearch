@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $listingCount = Property::where('L_StatusCatID', '1')->count();
+        $listingCount = Property::where('L_StatusCatID', 'Active')->count();
 
         return view('welcome', ['listingCount' => $listingCount]);
     }

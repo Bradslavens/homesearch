@@ -27,11 +27,11 @@ class ListingController extends Controller
         {
             $listings = Property::where([
                     ['L_ListingID', 'like', '%'. $request->propertyQuery . '%'],
-                    ['L_StatusCatID', 1],
+                    ['L_StatusCatID', 'Active'],
                 ])
                 ->orWhere([
                     ['L_Zip', 'like', '%'. $request->propertyQuery . '%'],
-                    ['L_StatusCatID', 1],
+                    ['L_StatusCatID', 'Active'],
                 ])->simplePaginate(3); 
         }
         else
@@ -42,7 +42,7 @@ class ListingController extends Controller
                 $queryString .= $q . '%';
             }
 
-            $listings = Property::where([['FullAddress', 'like', $queryString],['L_StatusCatID', 1]])->Paginate(3);
+            $listings = Property::where([['FullAddress', 'like', $queryString],['L_StatusCatID', 'Active']])->Paginate(3);
         }
 
 
