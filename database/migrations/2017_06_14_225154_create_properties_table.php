@@ -28,11 +28,11 @@ class CreatePropertiesTable extends Migration
             $table->string('LM_Int1_3')->nullable(); // total bedrooms
             $table->string('LM_Int2_3')->nullable(); // full baths
             $table->string('LM_Int1_5')->nullable(); // 1/2 baths
-            $table->string('LM_Int4_1')->nullable(); // 1/2 baths
+            $table->string('LM_Int4_1')->nullable(); // sf
             $table->string('L_UpdateDate')->nullable(); // updated date , not all have an update date
             $table->string('L_ListingDate'); // list date
             $table->string('L_Status');
-            $table->string('LM_Char10_1')->nullable();
+            $table->string('LM_Char10_1')->nullable(); // county
             $table->string('L_StatusCatID');
             $table->timestamps();
         });

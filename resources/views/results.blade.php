@@ -1,5 +1,10 @@
-@extends('layouts.main')
+{{-- variables
+$listing
+$listings->appends(['propertyQuery' => $propertyQuery])->links()
+ --}}
 
+@extends('layouts.main')
+    
 
 @section('title')
     <title>Slavens Realty Property Listings</title>
@@ -11,46 +16,82 @@
 
 @section('section')
     
-    <div class="container">
 
-        <header>
-            <h1>Slavens Realty</h1>
-            <h2>Selected Property Listings</h2>
-        </header>
+    {{-- property list --}}
+    <h2>Property List</h2>
 
-        <div class="listing-container">
-                
-                @foreach ($listings as $listing)
-                
-                    <div class="property-container">
-                        @if(is_object($listing->images->first()))
-                        <img class="responsive-image" src="{{$listing->images->first()->link}}">
-                        @endif
-                        
-                        <div class="details">
-                            <span class="price">$ {{number_format($listing->L_AskingPrice, 0)}}</span>
-                            <span class="beds">{{$listing->LM_Int1_3}} beds / {{$listing->LM_Int2_3}} @if($listing->LM_Int1_5).{{$listing->LM_Int1_5}} @endif Baths</span>
-                            <span class="sfeet">{{$listing->LM_Int4_1}} Estimated Square Feet</span>
-                            <address>{{$listing->FullAddress}}</address>
-                            <a class="request-tour" href="{{route('contact.create')}}">Request A Tour</a>
-                        </div>
-                    
-                    </div>
-                 @endforeach   
+    @foreach($listings as $listing)
+        <div id="listing-container">
+            <div id="main-image">
+                <img class="listing-image" src="{{$listing->images->first()->link}}">
+                <a class="more-images" href="#">{{$listing->images->count()}} Pictures</a>
+            </div>
+            {{--end #main-image --}}
 
+            <div id="summary">
+                <div class="price">
+                    $ {{ number_format($listing->L_AskingPrice)}}
+                </div>
+                <div class="address">
+                    {{$listing->L_AddressNumber}}
+                    {{$listing->L_AddressDirection}}
+                    {{$listing->L_AddressStreet}}
+                    {{$listing->L_Address2}}
+                    {{$listing->L_City}}
+                    {{$listing->L_State}}
+                    {{$listing->L_Zip}}
+                </div>
+                <div class="bed-bath">
+                    <strong>{{$listing->LM_Int1_3}}</strong> Bedroom <br>
+                    {{$listing->LM_Int2_3}} / {{$listing->LM_Int1_5}} <strong>Baths</strong>
+                </div>
+                <div class="square-feet">
+                    {{$listing->LM_Int4_1}} Estimated SF
+                </div>
+            </div>
+            {{-- end #summary --}}
+
+            <a href="#" class="details">Details</a>
         </div>
-        {{-- listing container --}}
+        {{-- end listing container --}}
 
-    </div>
-    {{-- container --}}
+    @endforeach
+    {{-- end property list --}}
 
+
+
+
+    {{-- pagination --}}
     <div class="pagination-container">
         {{ $listings->appends(['propertyQuery' => $propertyQuery])->links() }}
     </div>
+    {{-- end pagination --}}
 
-    @endsection
+@endsection
+
+
+@section('footer')
+    @include('partials.footer')
+@endsection
+
+
+  
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script>
     
+$(function(){
 
-    @section('footer')
-        @include('partials.footer')
-    @endsection
+    $('[data-toggle]').click(function(){
+
+        var target = $(this).attr('data-toggle');
+
+        var target = '[data-target='+target+']';
+
+        $(target).toggle();
+
+    });
+});
+
+</script>
+

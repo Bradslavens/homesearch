@@ -1,125 +1,50 @@
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;;
-}
+/*font-family: 'Fjalla One', sans-serif;
+font-family: 'Khula', sans-serif;
 
-.container {
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 1rem;
-}
+*/
 
-
-h1, h1:first-of-type + h2 {
-    color: #5d84e5;
-}
-
-h1 {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 8vh;
-}
-
-.details {
-    min-width: 100%;
-    border: red solid 1px;
-}
-
-.details a {
-    display: block;
-    background-color: #5d84e5;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    height: 40px;
-    width: 200px;
-    font-family: 'Fjalla One', sans-serif;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-.responsive-image {
-    max-width: 100%;
+.links a {
     display: block;
 }
 
-.pagination-container {
+#listing-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    font-family: 'Khula', sans-serif;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-}
-
-.pagination {
-    max-width: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
-.pagination a, .pagination .active span {
-    margin: 0 3px;
-    border-radius: 5px;
-    border: solid #070D86 2px;
-    padding: 8px 16px;
-}
-
-.pagination .active span {
-    background-color: #5d84e5;
-}
-
-.pagination a, .pagination .active  {
-    color: black;
-}
-
-.pagination a:hover {
-    background-color: #070D86;
-    color: white;
-}
-
-.active span {
-    color: white;
-}
-
-
-.price, .beds, address, .sfeet, footer p {
-    font-family: 'Khula', sans-serif;
-    color: white;
-    min-width: 100%;
-}
-
-.price, .beds, address, .sfeet {
-    color: #070D86;
+.listing-image {
     display: block;
+    width: 100%;
 }
 
-h1:first-of-type + h2 {
-    font-family: 'Khula', sans-serif;
+a.more-images, a.details {
+    text-decoration: none;
+    padding: 5px;
 }
 
+a.details {
+    color: red;
+    border: solid red 2px;
+}
 
-.price {
-    background-color: red;
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: 'Fjalla One', sans-serif;
+a.more-images {
+    z-index: 5;
+    position: relative;
+    top: -35px;
+    left: 10px;
     color: white;
-    text-align: left;
-    padding: 1vh 1.3vh ;
+    border: solid white 2px;
 }
 
 .pagination {
-    width: 30%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -127,29 +52,3 @@ h1:first-of-type + h2 {
     justify-content: space-around;
 }
 
-.pagination li {
-    display: inline-block;
-}
-
-/*li.disabled, .pagination li a:link , .pagination li a:visited , .pagination li a:hover , .pagination li a:active {
-    font-size: 2em;
-        
-}*/
-
-@media only screen and (min-width: 600px)
-{
-    .container {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-
-    }
-
-    header {
-        width: 50%;
-    }
-
-    .listing-container {
-        max-width: 50%;
-    }
-}
