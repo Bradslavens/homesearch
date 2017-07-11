@@ -26,12 +26,19 @@
       <div class="nav-container">
           <nav>
               <h1>Slavens Realty</h1>
-              <div data-toggle="nav" class="toggle">
-                 <button>:P</button>
-              </div>
+
               <div data-toggle="filter" class="toggle">
                  <button>Filter</button>
               </div>
+
+              <div data-toggle="nav" class="toggle">
+                 <button>
+                   <span class="bar">&horbar;</span>
+                   <span class="bar">&horbar;</span>
+                   <span class="bar">&horbar;</span>
+                 </button>
+              </div>
+
           </nav>
           
           <div data-target="nav" class="links">

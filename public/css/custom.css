@@ -40,3 +40,23 @@ footer {
     padding-right: 10px;
     float: left;
 }
+
+.toggle .bar {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 5px;
+}
+
+nav, .toggle button, .links, nav h1 {
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+}
+
+nav h1 {
+    font-family: 'Fjalla One', sans-serif;
+}
+

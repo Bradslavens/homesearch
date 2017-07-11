@@ -52,3 +52,25 @@ a.more-images {
     justify-content: space-around;
 }
 
+#filter {
+    font-family: 'Khula', sans-serif; 
+    padding: 10px;
+    background-color: #e4edf4;
+}
+
+#filter input {
+    border: none;
+    margin-top: 1px;
+}
+
+#filter label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#filter input[type=submit] {
+    margin-top: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+
