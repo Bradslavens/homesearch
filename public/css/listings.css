@@ -172,5 +172,16 @@ strong {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-around;
+        padding: 2vw 0;
+    }
+
+    .contact-agent, .details {
+        margin-bottom: 0;
+        width: 20vw;
+        text-align: center;
+    }
+
+    .square-feet {
+        border-bottom: solid lightgray;
     }
 }
