@@ -52,21 +52,42 @@
             <form method="POST" action="#">
                 {{ csrf_field() }}
 
-                <label for="priceLow">Price Low</label>
-                <input type="text" name="priceLow" placeholder="$0">
+                {{-- previous query  --}}
 
-                <label for="priceHigh">Price High</label>
-                <input type="text" name="priceHigh" placeholder="$1,000,000,000">
+                @if(session('query'))
+                  <input type="hidden" name="propertyQuery" value="{{session('query')}}">
+                @endif
+                <div class="form-groups">
 
-                <label for="bedrooms">Min Bedrooms</label>
-                <input type="text" name="bedrooms">
+                  <div class="form-group">
+                    <label for="priceLow">Price Low</label>
+                    <input type="text" name="priceLow" placeholder="$0">
+                  </div>
 
-                <label for="bathrooms">Min Baths</label>
-                <input type="text" name="bathrooms">
+                  <div class="form-group">
+                    <label for="priceHigh">Price High</label>
+                    <input type="text" name="priceHigh" placeholder="$1,000,000,000">
+                  </div>
+
+                </div>
+
+                <div class="form-groups">
+                  <div class="form-group">
+                    <label for="bedrooms">Min Bedrooms</label>
+                    <input type="text" name="bedrooms">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="bathrooms">Min Baths</label>
+                    <input type="text" name="bathrooms">
+                  </div>
+                </div>
 
                 {{-- add more --}}
-
-                <input type="submit" value="submit">
+                <div class="form-group">
+                    <input type="submit" value="Filter">
+                </div>
+                
 
             </form>
           </div>

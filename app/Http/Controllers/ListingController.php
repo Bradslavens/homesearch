@@ -23,6 +23,8 @@ class ListingController extends Controller
 
         $query = explode(' ', $trim );
 
+        session(['query' => $request->propertyQuery]);
+
         if(count($query) == 1 && strlen($query[0]) > 4 )
         {
             $listings = Property::where([

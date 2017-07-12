@@ -114,17 +114,42 @@ a.more-images {
 #filter input {
     border: none;
     margin-top: 1px;
+    padding: .5vw 1vw;
 }
 
 #filter label {
     margin-top: 15px;
     font-weight: bold;
+    width: 50vw;
+    text-align: left;
+    
 }
 
 #filter input[type=submit] {
     margin-top: 15px;
     padding: 5px;
     cursor: pointer;
+}
+
+.form-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40vw;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.form-groups {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 h2 {
@@ -142,6 +167,18 @@ h2 {
     background-color: #090cba;
 }
 
+#price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
 .address, .bed-bath {
     border-bottom: solid lightgray;
 }
