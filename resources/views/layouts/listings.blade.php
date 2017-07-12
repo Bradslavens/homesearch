@@ -27,6 +27,10 @@
           <nav>
               <h1>Slavens Realty</h1>
 
+              <div data-toggle="filter" class="toggle">
+                 <button>Filter</button>
+              </div>
+
               <div class="toggle">
                  <button data-toggle="nav" class="rotatable">
                    <span class="bar">&horbar;</span>
@@ -43,6 +47,31 @@
             <a href="{{route('careers')}}">Careers</a>
             <a href="about">About</a>
           </div>
+
+          <div data-target="filter" id="filter">
+            <form method="POST" action="#">
+                {{ csrf_field() }}
+
+                <label for="priceLow">Price Low</label>
+                <input type="text" name="priceLow" placeholder="$0">
+
+                <label for="priceHigh">Price High</label>
+                <input type="text" name="priceHigh" placeholder="$1,000,000,000">
+
+                <label for="bedrooms">Min Bedrooms</label>
+                <input type="text" name="bedrooms">
+
+                <label for="bathrooms">Min Baths</label>
+                <input type="text" name="bathrooms">
+
+                {{-- add more --}}
+
+                <input type="submit" value="submit">
+
+            </form>
+          </div>
+
+
       </div>
 
     @yield('section')

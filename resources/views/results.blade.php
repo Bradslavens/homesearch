@@ -3,7 +3,7 @@ $listing
 $listings->appends(['propertyQuery' => $propertyQuery])->links()
  --}}
 
-@extends('layouts.main')
+@extends('layouts.listings')
     
 
 @section('title')
