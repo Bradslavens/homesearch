@@ -21,14 +21,14 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
     <h2>Property List</h2>
 
     @foreach($listings as $listing)
-        <div id="listing-container">
-            <div id="main-image">
+        <div class="listing-container">
+            <div class="main-image">
                 <img class="listing-image" src="{{$listing->images->first()->link}}">
                 <a class="more-images" href="#">{{$listing->images->count()}} Pictures</a>
             </div>
             {{--end #main-image --}}
 
-            <div id="summary">
+            <div class="summary">
                 <div class="price">
                     $ {{ number_format($listing->L_AskingPrice)}}
                 </div>
@@ -42,16 +42,20 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
                     {{$listing->L_Zip}}
                 </div>
                 <div class="bed-bath">
-                    <strong>{{$listing->LM_Int1_3}}</strong> Bedroom <br>
-                    {{$listing->LM_Int2_3}} / {{$listing->LM_Int1_5}} <strong>Baths</strong>
+                    {{$listing->LM_Int1_3}} <strong>Bedroom(s)</strong> <br>
+                    {{$listing->LM_Int2_3}} <strong>Full Baths</strong> / {{$listing->LM_Int1_5}} <strong> 1/2 Baths</strong>
                 </div>
                 <div class="square-feet">
-                    {{$listing->LM_Int4_1}} Estimated SF
+                    {{$listing->LM_Int4_1}} <strong>SF</strong>
                 </div>
             </div>
             {{-- end #summary --}}
 
-            <a href="#" class="details">Details</a>
+            <div class="button-group">
+                <a href="#" class="details">Details</a>
+                <a href="#" class="contact-agent">Contact Agent</a>
+            </div>
+            
         </div>
         {{-- end listing container --}}
 
@@ -75,23 +79,4 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
 @endsection
 
 
-  
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
-<script>
-    
-$(function(){
-
-    $('[data-toggle]').click(function(){
-
-        var target = $(this).attr('data-toggle');
-
-        var target = '[data-target='+target+']';
-
-        $(target).toggle();
-
-    });
-});
-
-</script>
 

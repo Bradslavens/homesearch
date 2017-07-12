@@ -8,7 +8,23 @@
 // }
 // 
 $(document).ready(function(){
+
+    // rotate something with class rotatable
     $(".rotatable").click(function(){
+
         $(this).toggleClass('rotate');
+
     });
+
+    // display target
+    $('[data-toggle]').click(function(){
+
+        var target = $(this).attr('data-toggle');
+
+        var target = '[data-target='+target+']';
+
+        $(target).toggle();
+
+    });
+
 });

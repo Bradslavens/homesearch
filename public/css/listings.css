@@ -1,5 +1,5 @@
-/*font-family: 'Fjalla One', sans-serif;
-font-family: 'Khula', sans-serif;
+/* headlines font-family: 'Fjalla One', sans-serif;
+ p font-family: 'Khula', sans-serif;
 
 */
 
@@ -10,7 +10,7 @@ font-family: 'Khula', sans-serif;
     font-family: 'Khula', sans-serif;
 }
 
-#listing-container {
+.listing-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -21,6 +21,7 @@ font-family: 'Khula', sans-serif;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    position: relative;
 }
 
 .listing-image {
@@ -28,9 +29,9 @@ font-family: 'Khula', sans-serif;
     width: 100%;
 }
 
-a.more-images, a.details {
+a.more-images, a.details, a.contact-agent, .price, .address, .bed-bath, .square-feet {
     text-decoration: none;
-    padding: 5px;
+    padding: 10px 5px 5px 5px;
 }
 
 a.details {
@@ -38,11 +39,21 @@ a.details {
     border: solid red 2px;
 }
 
+a.contact-agent {
+    color: white;
+    background-color: red;
+    border: solid red 2px;
+}
+
+.main-image {
+    position: relative;
+}
 a.more-images {
     z-index: 5;
-    position: relative;
-    top: -35px;
-    left: 10px;
+    position: absolute;
+    bottom: 2vw;
+    right: 2vw;
+    padding-bottom: 10px;
     color: white;
     border: solid white 2px;
 }
@@ -55,7 +66,42 @@ a.more-images {
     justify-content: space-around;
 }
 
-#filter {
+.pagination li {
+    font-family: 'Khula', sans-serif;
+    background-color: #090cba;
+}
+
+.pagination li:last-child {
+    padding: 10px 5px 6px 8px;
+    border-radius: 0 10px;
+    margin-bottom: 10px;
+}
+
+.pagination li:first-child {    
+    padding: 10px 5px 6px 8px;
+    border-radius: 10px 0px;
+    margin-bottom: 10px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: white;
+}
+
+.pagination li:last-child a:before {
+    content: "next ";
+}
+
+.pagination li:first-child a:after {
+    content: " previous";
+}
+
+.disabled {
+    color: gray;
+    display: none;
+}
+
+#filter, h2 {
     font-family: 'Khula', sans-serif; 
     padding: 10px;
     background-color: #e4edf4;
@@ -77,3 +123,54 @@ a.more-images {
     cursor: pointer;
 }
 
+h2 {
+    color: black;
+    font-weight: bold;
+}
+
+.summary, .details, .contact-agent {
+    font-family: 'Khula', sans-serif;
+}
+
+.price {
+    color: white;
+    font-weight: bold;
+    background-color: #090cba;
+}
+
+.address, .bed-bath {
+    border-bottom: solid lightgray;
+}
+
+.bed-bath {
+
+}
+
+.square-feet {
+
+}
+
+.details {
+
+}
+
+.contact-agent {
+    margin-bottom: 20px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/*tablets*/
+@media only screen and (min-device-width: 768px)
+{
+    .button-group {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-around;
+    }
+}
