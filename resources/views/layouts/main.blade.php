@@ -31,7 +31,7 @@
                  <button>Filter</button>
               </div>
 
-              <div data-toggle="nav" class="toggle">
+              <div data-toggle="nav" class="toggle rotatable">
                  <button>
                    <span class="bar">&horbar;</span>
                    <span class="bar">&horbar;</span>
@@ -81,5 +81,8 @@
     
     @yield('footer')
         
+    <script src="/js/custom.js"></script>
+  
+
   </body>
 </html>

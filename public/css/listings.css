@@ -5,6 +5,9 @@ font-family: 'Khula', sans-serif;
 
 .links a {
     display: block;
+    color: white;
+    text-decoration: none;
+    font-family: 'Khula', sans-serif;
 }
 
 #listing-container {
