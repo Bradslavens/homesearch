@@ -28,33 +28,37 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
             </div>
             {{--end #main-image --}}
 
-            <div class="summary">
-                <div class="price">
-                    $ {{ number_format($listing->L_AskingPrice)}}
+            <div class="details1">
+                <div class="summary">
+                    <div class="price">
+                        $ {{ number_format($listing->L_AskingPrice)}}
+                    </div>
+                    <div class="address">
+                        {{$listing->L_AddressNumber}}
+                        {{$listing->L_AddressDirection}}
+                        {{$listing->L_AddressStreet}}
+                        {{$listing->L_Address2}}
+                        {{$listing->L_City}}
+                        {{$listing->L_State}}
+                        {{$listing->L_Zip}}
+                    </div>
+                    <div class="bed-bath">
+                        {{$listing->LM_Int1_3}} <strong>Bedroom(s)</strong> <br>
+                        {{$listing->LM_Int2_3}} <strong>Full Baths</strong> / {{$listing->LM_Int1_5}} <strong> 1/2 Baths</strong>
+                    </div>
+                    <div class="square-feet">
+                        {{$listing->LM_Int4_1}} <strong>SF</strong>
+                    </div>
                 </div>
-                <div class="address">
-                    {{$listing->L_AddressNumber}}
-                    {{$listing->L_AddressDirection}}
-                    {{$listing->L_AddressStreet}}
-                    {{$listing->L_Address2}}
-                    {{$listing->L_City}}
-                    {{$listing->L_State}}
-                    {{$listing->L_Zip}}
-                </div>
-                <div class="bed-bath">
-                    {{$listing->LM_Int1_3}} <strong>Bedroom(s)</strong> <br>
-                    {{$listing->LM_Int2_3}} <strong>Full Baths</strong> / {{$listing->LM_Int1_5}} <strong> 1/2 Baths</strong>
-                </div>
-                <div class="square-feet">
-                    {{$listing->LM_Int4_1}} <strong>SF</strong>
-                </div>
-            </div>
-            {{-- end #summary --}}
+                {{-- end #summary --}}
 
-            <div class="button-group">
-                <a href="#" class="details">Details</a>
-                <a href="#" class="contact-agent">Contact Agent</a>
+                <div class="button-group">
+                    <a href="#" class="details">Details</a>
+                    <a href="#" class="contact-agent">Contact Agent</a>
+                </div>
+                {{-- end button group --}}
             </div>
+            {{-- end details1 --}}
             
         </div>
         {{-- end listing container --}}

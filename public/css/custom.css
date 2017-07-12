@@ -57,7 +57,7 @@ nav, .toggle button, .links, nav h1 {
 }
 
 .links {
-    text-align: center;
+    text-align: right;
 }
 nav h1 {
     font-family: 'Fjalla One', sans-serif;
