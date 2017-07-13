@@ -96,9 +96,11 @@ class ListingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($listing)
     {
-        //
+        $property = Property::find($listing);
+
+        return view('details', ['property' => $property]);
     }
 
     /**

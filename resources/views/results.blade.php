@@ -24,7 +24,7 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
         <div class="listing-container">
             <div class="main-image">
                 <img class="listing-image" src="{{$listing->images->first()->link}}">
-                <a class="more-images" href="#">{{$listing->images->count()}} Pictures</a>
+                <a class="more-images" href="{{route('listing.show', ['listing' => $listing->id])}}">{{$listing->images->count()}} Pictures</a>
             </div>
             {{--end #main-image --}}
 
@@ -53,8 +53,8 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
                 {{-- end #summary --}}
 
                 <div class="button-group">
-                    <a href="#" class="details">Details</a>
-                    <a href="#" class="contact-agent">Contact Agent</a>
+                    <a href="{{route('listing.show', ['listing' => $listing->id])}}" class="details">Details</a>
+                    <a href="{{route('contact.create')}}" class="contact-agent">Contact Agent</a>
                 </div>
                 {{-- end button group --}}
             </div>
