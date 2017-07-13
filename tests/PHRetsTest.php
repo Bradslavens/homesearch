@@ -38,13 +38,9 @@ class PHRetsTest extends TestCase
         $classes = $rets->GetClassesMetadata('Property');
         // var_dump($classes->first());
         
-        $objects = $rets->GetObject('Property', 'Photo', $r['L_ListingID'], '*', 1);
-        // var_dump($objects);
-
-
         $fields = $rets->GetTableMetadata('Property', 'RE_1');
 
-        // $rets->Disconnect();
+        // $rets->Disconnect(); for some reason this makes the other test fail ???
 
     }
 
@@ -64,7 +60,7 @@ class PHRetsTest extends TestCase
 
         $connect = $rets->Login();
 
-        $results = $rets->Search('Property', 'RE_1', '(ListPrice=5000000+)', ['Limit' => 1, 'Select' => 'L_ListingID']);
+        $results = $rets->Search('Property', 'RE_1', '(ListPrice=5000000+)|(L_StatusCatID=1),(L_IdxInclude=0,2)', ['Limit' => 1, 'Select' => ['L_ListingID', 'L_AskingPrice', 'L_IdxInclude', 'L_StatusCatID' ]]);
         
         foreach ($results as $r) 
         {

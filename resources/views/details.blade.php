@@ -22,90 +22,95 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
 
     <img id="large-image" src="{{$property->images()->first()->link}}">
 
-    @foreach($property->images as $image)
-        <img class="small-image" src="{{$image->link}}">
-    @endforeach
+    <div class="small-image-container">
+        @foreach($property->images as $image)
+            <img class="small-image" src="{{$image->link}}">
+        @endforeach
+    </div>
 
-    <p>{{$property->LR_remarks11}}</p>
+    {{-- remarks --}}
+    <p><span>Remarks: </span>{{$property->LR_remarks11}}</p>
+
     <div class="propert-detail">
-        Full Address: {{$property->FullAddress}}
-    </div>
-        Listing ID: {{$property->L_ListingID}}
-    </div>
-    <div class="propert-detail">
-        Asking Price: {{$property->L_AskingPrice}}
+        <p><span>Full Address: </span>{{$property->FullAddress}}</p>
     </div>
     <div class="propert-detail">
-        beds: {{$property->LM_Int1_3}}
+        <p><span>Asking Price: </span>{{$property->L_AskingPrice}}</p>
     </div>
     <div class="propert-detail">
-        Full Baths: {{$property->LM_Int2_3}}
+        <p><span>beds: </span> {{$property->LM_Int1_3}}</p>
     </div>
     <div class="propert-detail">
-        Half Baths: {{$property->LM_Int1_5}}
+        <p><span>Full Baths: </span> {{$property->LM_Int2_3}}</p>
     </div>
     <div class="propert-detail">
-        Estimated SF: {{$property->LM_Int4_1}}
+        <p><span>Half Baths: </span> {{$property->LM_Int1_5}}</p>
     </div>
     <div class="propert-detail">
-        Terms: {{$property->LFD_Terms_42}}
+        <p><span>Estimated SF: </span> {{$property->LM_Int4_1}}</p>
     </div>
     <div class="propert-detail">
-        Pets: {{$property->LM_Char10_6}}
+        <p><span>Terms: </span> {{$property->LFD_Terms_42}}</p>
     </div>
     <div class="propert-detail">
-        Stories: {{$property->LM_Char10_11}}
+        <p><span>Pets: </span> {{$property->LM_Char10_6}}</p>
     </div>
     <div class="propert-detail">
-        Lot Size: {{$property->LM_Char10_15}}
+        <p><span>Stories: </span> {{$property->LM_Char10_11}}</p>
     </div>
     <div class="propert-detail">
-        Age Restrictions: {{$property->LM_Char50_5}}
+        <p><span>Lot Size: </span> {{$property->LM_Char10_15}}</p>
     </div>
     <div class="propert-detail">
-        Fire Place: {{$property->LM_Int1_8}}
+        <p><span>Age Restrictions: </span> {{$property->LM_Char50_5}}</p>
     </div>
     <div class="propert-detail">
-        Year Built: {{$property->LM_Int2_1}}
+        <p><span>Fire Place: </span> {{$property->LM_Int1_8}}</p>
     </div>
     <div class="propert-detail">
-        Parking Garage Spaces: {{$property->LM_Int4_7}}
+        <p><span>Year Built: </span> {{$property->LM_Int2_1}}</p>
     </div>
     <div class="propert-detail">
-        Parking Total Spaces: {{$property->LM_Int4_8}}
+        <p><span>Parking Garage Spaces: </span> {{$property->LM_Int4_7}}</p>
     </div>
     <div class="propert-detail">
-        Listing Total Fees: {{$property->LM_Int4_16}}
+        <p><span>Parking Total Spaces: </span> {{$property->LM_Int4_8}}</p>
     </div>
     <div class="propert-detail">
-        Home Owner Fees: {{$property->LM_Dec_3}}
+        <p><span>Listing Total Fees: </span> {{$property->LM_Int4_16}}</p>
     </div>
     <div class="propert-detail">
-        Home Owner Total Fees: {{$property->LM_Dec_4}}
+        <p><span>Home Owner Fees: </span> {{$property->LM_Dec_3}}</p>
     </div>
     <div class="propert-detail">
-        CDF Mello Roos: {{$property->LM_Dec_6}}
+        <p><span>Home Owner Total Fees: </span> {{$property->LM_Dec_4}}</p>
     </div>
     <div class="propert-detail">
-        Cooling: {{$property->LFD_Cooling_3}}
+        <p><span>CDF Mello Roos: </span> {{$property->LM_Dec_6}}</p>
     </div>
     <div class="propert-detail">
-        Equipment: {{$property->LFD_Equipment_4}}
+        <p><span>Cooling: </span> {{$property->LFD_Cooling_3}}</p>
     </div>
     <div class="propert-detail">
-        Laundry Location: {{$property->LFD_LaundryLocation_15}}
+        <p><span>Equipment: </span> {{$property->LFD_Equipment_4}}</p>
     </div>
     <div class="propert-detail">
-        Pool: {{$property->LFD_Pool_25}}
+        <p><span>Laundry Location: </span> {{$property->LFD_LaundryLocation_15}}</p>
     </div>
     <div class="propert-detail">
-        School District: {{$property->LFD_SchoolDistrict_32}}
+        <p><span>Pool: </span> {{$property->LFD_Pool_25}}</p>
     </div>
     <div class="propert-detail">
-        View: {{$property->LFD_View_44}}
+        <p><span>School District: </span> {{$property->LFD_SchoolDistrict_32}}</p>
     </div>
     <div class="propert-detail">
-        Property Condition: {{$property->LFD_PropertyCondition_305}}
+        <p><span>View: </span> {{$property->LFD_View_44}}</p>
+    </div>
+    <div class="propert-detail">
+        <p><span>Property Condition: </span> {{$property->LFD_PropertyCondition_305}}</p>
+    </div>
+    <div>
+        <p><span>Listing ID:</span> {{$property->L_ListingID}}</p>
     </div>
 
 

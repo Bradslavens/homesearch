@@ -27,4 +27,11 @@ $(document).ready(function(){
 
     });
 
+    $('.small-image').click(function(){
+
+        var newSrc = $(this).attr('src');
+
+        $('#large-image').attr('src', newSrc );
+    });
+
 });

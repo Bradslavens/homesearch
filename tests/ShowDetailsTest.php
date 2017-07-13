@@ -26,7 +26,7 @@ class ShowDetailsTest extends TestCase
             $property->images()->save($image);
         }
 
-        $this->visitRoute('listing.show', ['id' => $property->L_ListingID])
+        $this->visitRoute('listing.show', ['id' => $property->id])
             ->see($property->FullAddress);
     }
 }

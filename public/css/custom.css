@@ -48,7 +48,7 @@ footer {
     line-height: 5px;
 }
 
-nav, .toggle button, .links, nav h1 {
+nav, .toggle button, .links, nav h1, p {
     background-color: black;
     color: white;
     padding: 8px 16px;
@@ -56,12 +56,33 @@ nav, .toggle button, .links, nav h1 {
     outline: none;
 }
 
-.links {
+.links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-family: 'Khula', sans-serif;
     text-align: right;
 }
-nav h1 {
+
+nav h1, h2 {
     font-family: 'Fjalla One', sans-serif;
     padding: 8px 16px 8px 0;
+}
+
+
+p {
+    font-family: 'Khula', sans-serif;
+    background-color: white;
+    color: black;
+    font-size: 4vw;
+}
+
+p span {
+    font-weight: bold;
+}
+
+h2 {
+    padding: 8px 16px;
 }
 
 .rotate {
@@ -78,3 +99,59 @@ nav h1 {
     margin-top: 10px;
 }
 
+img {
+    display: block;
+}
+
+#large-image {
+    width: 100vw;
+}
+
+.small-image {
+    width: 30vw;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    padding: 1vh;
+}
+
+.small-image-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;  
+    -ms-flex-wrap: wrap;  
+    flex-wrap: wrap;
+    margin-top: 1vh;
+    border-bottom: solid gray 1px;
+}
+
+.btn-urgent {
+    font-size: 4vw;
+    font-family: 'Khula', sans-serif;
+    color: white;
+    background-color: red;
+    border: white solid 1px;
+    padding: 10px 10px 6px 10px;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 768px)
+{
+    p {
+        font-size: 2vw;
+    }
+
+    .btn-urgent  {
+        font-size: 2vw;
+    }
+
+    .small-image {
+        width: 15vw;
+    }
+}
