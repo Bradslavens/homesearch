@@ -33,7 +33,7 @@ class getPropertyListTest   extends TestCase
                 ->see('Slavens')
                 ->type('123 main', 'propertyQuery')
                 ->press('SEARCH')
-                ->seePageIs('http://localhost/listing?propertyQuery=123%20main');
+                ->seePageIs('http://localhost/listing?bathrooms=0&bedrooms=0&priceHigh=9999999999999&priceLow=0&propertyQuery=123%20main');
 
     }
 

@@ -26,13 +26,21 @@ class ListingController extends Controller
         session(['query' => $request->propertyQuery]);
 
         if(count($query) == 1 && strlen($query[0]) > 4 )
-        {
+        {            
             $listings = Property::where([
                     ['L_ListingID', 'like', '%'. $request->propertyQuery . '%'],
+                    ['L_AskingPrice','<=', preg_replace("/[^0-9]/","", urldecode($request->priceHigh))],
+                    ['L_AskingPrice', '>=', preg_replace("/[^0-9]/","", urldecode($request->priceLow))],
+                    ['LM_Int1_3', '>=',  $request->bedrooms],
+                    ['LM_Int2_6', '>=', $request->bathrooms],
                     ['L_StatusCatID', 'Active'],
                 ])
                 ->orWhere([
                     ['L_Zip', 'like', '%'. $request->propertyQuery . '%'],
+                    ['L_AskingPrice','<=', preg_replace("/[^0-9]/","", urldecode($request->priceHigh))],
+                    ['L_AskingPrice', '>=', preg_replace("/[^0-9]/","", urldecode($request->priceLow))],
+                    ['LM_Int1_3', '>=',  $request->bedrooms],
+                    ['LM_Int2_6', '>=', $request->bathrooms],
                     ['L_StatusCatID', 'Active'],
                 ])->simplePaginate(3); 
         }
@@ -44,14 +52,20 @@ class ListingController extends Controller
                 $queryString .= $q . '%';
             }
 
-            $listings = Property::where([['FullAddress', 'like', $queryString],['L_StatusCatID', 'Active']])->simplePaginate(3);
+            $listings = Property::where([
+                    ['FullAddress', 'like', $queryString],
+                    ['L_StatusCatID', 'Active'],
+                    ['L_AskingPrice','<=', preg_replace("/[^0-9]/","", urldecode($request->priceHigh))],
+                    ['L_AskingPrice', '>=', preg_replace("/[^0-9]/","", urldecode($request->priceLow))],
+                    ['LM_Int1_3', '>=',  $request->bedrooms],
+                    ['LM_Int2_6', '>=' , $request->bathrooms],
+                ])->simplePaginate(3);
         }
-
 
         $pq = urlencode($request->propertyQuery);
 
 
-        return view('results', ['listings' => $listings, 'propertyQuery' => $pq]);
+        return view('results', ['listings' => $listings, 'propertyQuery' => $pq, 'priceHigh' => $request->priceHigh, 'priceLow' => $request->priceLow, 'bedrooms' => $request->bedrooms, 'bathrooms' => $request->bathrooms]);
 
     }
 

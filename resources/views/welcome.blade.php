@@ -37,6 +37,11 @@
                 <label for="form"><h2>Search From  {{number_format($listingCount)}} Local Listings:</h2></label>
                 <input name="propertyQuery" type="search" placeholder="Enter an MLS#, Address, City, State or Zip">
                 
+                <input type="hidden" name="priceHigh" value="9999999999999">
+                <input type="hidden" name="priceLow" value="0">
+                <input type="hidden" name="bedrooms" value="0">
+                <input type="hidden" name="bathrooms" value="0">
+                
                 <input type="submit" value="SEARCH">
             </form>
             <nav>

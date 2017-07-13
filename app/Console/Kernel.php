@@ -32,9 +32,8 @@ class Kernel extends ConsoleKernel
 
             $yesterday = Carbon::yesterday()->toAtomString();
 
-            $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+)";
-            // $query = '(L_Status=1_0,1_1,1_2),(LM_Char10_1=SanDiego)';
-            // $query = '(L_StatusCatID=1)';
+            $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+),(L_IdxInclude=0,2)"; //select only those that can be show on the internet
+            // $query = '(L_StatusCatID=1),(L_IdxInclude=0,2)'; //select only those that can be show on the internet
             
 
             // connect to RETS
@@ -55,11 +54,57 @@ class Kernel extends ConsoleKernel
             Log::info('started query');
 
             // set limit
-            $limit = 2000;
+            // $limit = 2000;
+            $limit = 2000; // for testing
             
-            // $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => 5000, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate', 'L_Status', 'L_StatusCatID' ], 'Offset' => 2400,]);
-            
-            $results1 = $rets->Search('Property', 'RE_1', $query, ['select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate', 'L_Status', 'L_StatusCatID' ], 'Count' => 2, 'Format' => 'COMPACT-DECODED', 'PropertyQueryType=DMQL2',]);
+               
+            $select = [
+                        'L_ListingID', 
+                        'L_AskingPrice', 
+                        'L_AddressNumber', 
+                        'L_AddressDirection', 
+                        'L_AddressStreet', 
+                        'L_Address2', 
+                        'L_City', 
+                        'L_State', 
+                        'L_Zip', 
+                        'LM_Int1_3',
+                        'LM_Int2_3',
+                        'LM_Int1_5',
+                        'LM_Int4_1',
+                        'L_UpdateDate', 
+                        'L_ListingDate', 
+                        'L_Status', 
+                        'L_StatusCatID',
+                        'LFD_Terms_42',
+                        'LR_remarks11',
+                        'LM_Char10_6',
+                        'LM_Char10_11',
+                        'LM_Char10_15',
+                        'LM_Char50_5',
+                        'LM_Int1_8',
+                        'LM_Int2_1',
+                        'LM_Int4_7',
+                        'LM_Int4_8',
+                        'LM_Int4_16',
+                        'LM_Dec_3',
+                        'LM_Dec_4',
+                        'LM_Dec_6',
+                        'LFD_Cooling_3',
+                        'LFD_Equipment_4',
+                        'LFD_LaundryLocation_15',
+                        'LFD_Pool_25',
+                        'LFD_SchoolDistrict_32',
+                        'LFD_View_44',
+                        'LFD_PropertyCondition_305',
+                    ]; 
+                        
+            $results1 = $rets->Search('Property', 'RE_1', $query, 
+                    [
+                        'select' => $select, 'Count' => 2, 
+                        'Format' => 'COMPACT-DECODED', 
+                        'PropertyQueryType=DMQL2',
+                    ]);
 
 
              // log::info('ended query - count = ');
@@ -73,7 +118,7 @@ class Kernel extends ConsoleKernel
 
                 Log::info('o = ' . $o);
 
-                $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => $limit, 'select' => ['L_ListingID', 'L_AskingPrice', 'L_AddressNumber', 'L_AddressDirection', 'L_AddressStreet', 'L_Address2', 'L_City', 'L_State', 'L_Zip', 'LM_Int1_3','LM_Int2_3','LM_Int1_5','LM_Int4_1','L_UpdateDate', 'L_ListingDate', 'L_Status', 'L_StatusCatID' ], 'Offset' => $o, 'Format' => 'COMPACT-DECODED', 'PropertyQueryType=DMQL2',]);
+                $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => $limit, 'select' => $select, 'Offset' => $o, 'Format' => 'COMPACT-DECODED', 'PropertyQueryType=DMQL2',]);
 
                 foreach ($results as $r) 
                 {
@@ -86,19 +131,40 @@ class Kernel extends ConsoleKernel
                     
                     $property = \App\Property::where('L_ListingID', $r['L_ListingID'])->first();
 
+                    $details = [
+                                'L_ListingID' => $r['L_ListingID'], 
+                                'FullAddress' => $fullAddress  , 
+                                'L_AskingPrice' => $r['L_AskingPrice'], 
+                                'L_AddressNumber' => $r['L_AddressNumber'], 
+                                'L_AddressDirection' => $r['L_AddressDirection'], 
+                                'L_AddressStreet' => $r['L_AddressStreet'], 
+                                'L_Address2' => $r['L_Address2'], 
+                                'L_City' => $r['L_City'], 
+                                'L_State' => $r['L_State'], 
+                                'L_Zip' => $r['L_Zip'], 
+                                'LM_Int1_3' => $r['LM_Int1_3'],
+                                'LM_Int2_3' => $r['LM_Int2_3'],
+                                'LM_Int1_5' => $r['LM_Int1_5'],
+                                'LM_Int4_1' => $r['LM_Int4_1'], 
+                                'L_UpdateDate' => $r['L_UpdateDate'], 
+                                'L_ListingDate' => $r['L_ListingDate'], 
+                                'L_Status' => $r['L_Status'], 
+                                'L_StatusCatID' => $r['L_StatusCatID'], 
+                            ];
+
                     if($property == null)
                     {
                         Log::info('property does not exist');
 
                         // add the property to the database
-                        $property = \App\Property::create(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $fullAddress  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'L_Zip' => $r['L_Zip'], 'LM_Int1_3' => $r['LM_Int1_3'],'LM_Int2_3' => $r['LM_Int2_3'],'LM_Int1_5' => $r['LM_Int1_5'],'LM_Int4_1' => $r['LM_Int4_1'], 'L_UpdateDate' => $r['L_UpdateDate'], 'L_ListingDate' => $r['L_ListingDate'], 'L_Status' => $r['L_Status'], 'L_StatusCatID' => $r['L_StatusCatID'], ]);
+                        $property = \App\Property::create($details);
                     }
                     else
                     {
 
                         Log::info('property already exists');
 
-                        \App\Property::find($property->id)->update(['L_ListingID' => $r['L_ListingID'], 'FullAddress' => $fullAddress  , 'L_AskingPrice' => $r['L_AskingPrice'], 'L_AddressNumber' => $r['L_AddressNumber'], 'L_AddressDirection' => $r['L_AddressDirection'], 'L_AddressStreet' => $r['L_AddressStreet'], 'L_Address2' => $r['L_Address2'], 'L_City' => $r['L_City'], 'L_State' => $r['L_State'], 'LM_Int1_3' => $r['LM_Int1_3'],'LM_Int2_3' => $r['LM_Int2_3'],'LM_Int1_5' => $r['LM_Int1_5'],'LM_Int4_1' => $r['LM_Int4_1'], 'L_UpdateDate' => $r['L_UpdateDate'], 'L_ListingDate' => $r['L_ListingDate'], 'L_Status' => $r['L_Status'], 'L_StatusCatID' => $r['L_StatusCatID'], ]);
+                        \App\Property::find($property->id)->update($details);
 
                         $property = \App\Property::find($property->id);
                     }

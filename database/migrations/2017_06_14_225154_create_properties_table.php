@@ -34,6 +34,28 @@ class CreatePropertiesTable extends Migration
             $table->string('L_Status');
             $table->string('LM_Char10_1')->nullable(); // county
             $table->string('L_StatusCatID');
+            $table->string('LFD_Terms_42')->nullable();
+            $table->string('LR_remarks11')->nullable();
+            $table->string('LM_Char10_6')->nullable();
+            $table->string('LM_Char10_11')->nullable();
+            $table->string('LM_Char10_15')->nullable();
+            $table->string('LM_Char50_5')->nullable();
+            $table->string('LM_Int1_8')->nullable();
+            $table->string('LM_Int2_1')->nullable();
+            $table->string('LM_Int4_7')->nullable();
+            $table->string('LM_Int4_8')->nullable();
+            $table->string('LM_Int4_16')->nullable();
+            $table->string('LM_Dec_3')->nullable();
+            $table->string('LM_Dec_4')->nullable();
+            $table->string('LM_Dec_6')->nullable();
+            $table->string('LFD_Cooling_3')->nullable();
+            $table->string('LFD_Equipment_4')->nullable();
+            $table->string('LFD_LaundryLocation_15')->nullable();
+            $table->string('LFD_Pool_25')->nullable();
+            $table->string('LFD_SchoolDistrict_32')->nullable();
+            $table->string('LFD_View_44')->nullable();
+            $table->string('LFD_PropertyCondition_305')->nullable();
+            $table->string('LM_Int2_6')->nullable();
             $table->timestamps();
         });
     }

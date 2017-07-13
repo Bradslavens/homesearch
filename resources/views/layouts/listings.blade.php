@@ -49,11 +49,11 @@
           </div>
 
           <div data-target="filter" id="filter">
-            <form method="POST" action="#">
-                {{ csrf_field() }}
+            <form method="GET" action="{{route('listing.index')}}">
+
+                {{-- {{csrf_field()}} --}}
 
                 {{-- previous query  --}}
-
                 @if(session('query'))
                   <input type="hidden" name="propertyQuery" value="{{session('query')}}">
                 @endif
@@ -61,12 +61,12 @@
 
                   <div class="form-group">
                     <label for="priceLow">Price Low</label>
-                    <input type="text" name="priceLow" placeholder="$0">
+                    $<input type="text" name="priceLow" value="$0">
                   </div>
 
                   <div class="form-group">
                     <label for="priceHigh">Price High</label>
-                    <input type="text" name="priceHigh" placeholder="$1,000,000,000">
+                    $<input type="text" name="priceHigh" value="$1,000,000,000">
                   </div>
 
                 </div>
@@ -74,12 +74,12 @@
                 <div class="form-groups">
                   <div class="form-group">
                     <label for="bedrooms">Min Bedrooms</label>
-                    <input type="text" name="bedrooms">
+                    <input type="text" value="0" name="bedrooms">
                   </div>
 
                   <div class="form-group">
                     <label for="bathrooms">Min Baths</label>
-                    <input type="text" name="bathrooms">
+                    <input type="text" value="0" name="bathrooms">
                   </div>
                 </div>
 

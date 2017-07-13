@@ -17,6 +17,7 @@ class PHRetsTest extends TestCase
     public function testPHRetsMeta()
     {
         $config = new \PHRETS\Configuration;
+
         $config->setLoginUrl(env('RETS_URL'))
                 ->setUsername(env('RETS_USER'))
                 ->setPassword(env('RETS_PASS'))
@@ -25,7 +26,6 @@ class PHRetsTest extends TestCase
         $config->setHttpAuthenticationMethod('basic');
 
         $rets = new \PHRETS\Session($config);
-
         $connect = $rets->Login();
 
         $system = $rets->GetSystemMetadata();
@@ -38,7 +38,7 @@ class PHRetsTest extends TestCase
         $classes = $rets->GetClassesMetadata('Property');
         // var_dump($classes->first());
         
-        // $objects = $rets->GetObject('Property', 'Photo', $r['L_ListingID'], '*', 1);
+        $objects = $rets->GetObject('Property', 'Photo', $r['L_ListingID'], '*', 1);
         // var_dump($objects);
 
 
@@ -52,6 +52,7 @@ class PHRetsTest extends TestCase
     {
 
         $config = new \PHRETS\Configuration;
+
         $config->setLoginUrl(env('RETS_URL'))
                 ->setUsername(env('RETS_USER'))
                 ->setPassword(env('RETS_PASS'))

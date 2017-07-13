@@ -71,7 +71,7 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
 
     {{-- pagination --}}
     <div class="pagination-container">
-        {{ $listings->appends(['propertyQuery' => $propertyQuery])->links() }}
+        {{ $listings->appends(['propertyQuery' => $propertyQuery, 'priceHigh' => $priceHigh, 'priceLow' => $priceLow, 'bedrooms' => $bedrooms, 'bathrooms' => $bathrooms])->links() }}
     </div>
     {{-- end pagination --}}
 
