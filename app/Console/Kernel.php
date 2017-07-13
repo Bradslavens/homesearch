@@ -32,8 +32,8 @@ class Kernel extends ConsoleKernel
 
             $yesterday = Carbon::yesterday()->toAtomString();
 
-            $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+),(L_IdxInclude=0,2)"; //select only those that can be show on the internet
-            // $query = '(L_StatusCatID=1),(L_IdxInclude=0,2)'; //select only those that can be show on the internet
+            // $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+),(L_IdxInclude=0,2)"; //select only those that can be show on the internet
+            $query = '(L_StatusCatID=1),(L_IdxInclude=0,2)'; //select only those that can be show on the internet
             
 
             // connect to RETS
@@ -54,8 +54,7 @@ class Kernel extends ConsoleKernel
             Log::info('started query');
 
             // set limit
-            // $limit = 2000;
-            $limit = 1; // for testing
+            $limit = 2000;
             
                
             $select = [
@@ -72,6 +71,7 @@ class Kernel extends ConsoleKernel
                         'LM_Int2_3',
                         'LM_Int1_5',
                         'LM_Int4_1',
+                        'LM_Int2_6',
                         'L_UpdateDate', 
                         'L_ListingDate', 
                         'L_Status', 
@@ -199,7 +199,7 @@ class Kernel extends ConsoleKernel
 
             $rets->Disconnect();
 
-        })->dailyAt("02:00");
+        })->hourlyAt(54);
     }
 
     /**

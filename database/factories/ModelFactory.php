@@ -66,7 +66,7 @@ $factory->define(App\Property::class, function (Faker\Generator $faker)
         'LFD_SchoolDistrict_32' => $faker->word(),
         'LFD_View_44' => $faker->word(),
         'LFD_PropertyCondition_305' => $faker->word(),
-        'LM_Int2_6' => $faker->word(),
+        'LM_Int2_6' => $faker->number(),
     ];
 
 });
