@@ -55,7 +55,7 @@ class Kernel extends ConsoleKernel
 
             // set limit
             // $limit = 2000;
-            $limit = 2000; // for testing
+            $limit = 1; // for testing
             
                
             $select = [
