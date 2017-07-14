@@ -97,6 +97,7 @@ class Kernel extends ConsoleKernel
                         'LFD_SchoolDistrict_32',
                         'LFD_View_44',
                         'LFD_PropertyCondition_305',
+                        'L_IdxInclude',
                     ]; 
                         
             $results1 = $rets->Search('Property', 'RE_1', $query, 
@@ -150,6 +151,7 @@ class Kernel extends ConsoleKernel
                                 'L_ListingDate' => $r['L_ListingDate'], 
                                 'L_Status' => $r['L_Status'], 
                                 'L_StatusCatID' => $r['L_StatusCatID'], 
+                                'L_IdxInclude' => $r['L_IdxInclude'],
                             ];
 
                     if($property == null)

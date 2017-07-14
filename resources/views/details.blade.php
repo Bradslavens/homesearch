@@ -32,7 +32,13 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
     <p><span>Remarks: </span>{{$property->LR_remarks11}}</p>
 
     <div class="propert-detail">
-        <p><span>Full Address: </span>{{$property->FullAddress}}</p>
+        <p><span>Full Address: </span>
+        @if($property->L_IdxInclude == 0 )
+            {{$property->FullAddress}}
+        @elseif($property->L_IdxInclude == 2)
+            <p>Address not available per seller's request: Please <a href="{{route('contact.create')}}">Contact Agent</a> For Address</p>
+        @endif
+        </p>
     </div>
     <div class="propert-detail">
         <p><span>Asking Price: </span>{{$property->L_AskingPrice}}</p>

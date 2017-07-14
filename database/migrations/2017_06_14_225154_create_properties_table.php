@@ -56,6 +56,7 @@ class CreatePropertiesTable extends Migration
             $table->string('LFD_View_44')->nullable();
             $table->string('LFD_PropertyCondition_305')->nullable();
             $table->string('LM_Int2_6')->nullable();
+            $table->string('L_IdxInclude')->nullable();
             $table->timestamps();
         });
     }

@@ -34,13 +34,19 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
                         $ {{ number_format($listing->L_AskingPrice)}}
                     </div>
                     <div class="address">
-                        {{$listing->L_AddressNumber}}
-                        {{$listing->L_AddressDirection}}
-                        {{$listing->L_AddressStreet}}
-                        {{$listing->L_Address2}}
-                        {{$listing->L_City}}
-                        {{$listing->L_State}}
-                        {{$listing->L_Zip}}
+                        Address:
+                        @if($listing->L_IdxInclude == 0)
+                            {{$listing->L_AddressNumber}}
+                            {{$listing->L_AddressDirection}}
+                            {{$listing->L_AddressStreet}}
+                            {{$listing->L_Address2}}
+                            {{$listing->L_City}}
+                            {{$listing->L_State}}
+                            {{$listing->L_Zip}}
+                        @elseif($listing->L_IdxInclude == 2)
+                            <p>Address not available per seller's request: Please <a href="{{route('contact.create')}}">Contact Agent</a> For Address</p>
+                        @endif  
+
                     </div>
                     <div class="bed-bath">
                         {{$listing->LM_Int1_3}} <strong>Bedroom(s)</strong> <br>

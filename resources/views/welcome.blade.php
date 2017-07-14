@@ -17,10 +17,8 @@
     </style>
 
 
+    
     <link rel="stylesheet" type="text/css" href="/css/landing.css">
-    <style type="text/css">
-
-    </style>
 
   </head>
   <body>
@@ -49,7 +47,7 @@
                 <div class="items"><a href="{{route('contact.create')}}">Contact Us</a></div>
                 <div class="items"><a href="{{route('careers')}}">Careers</a></div>
             </nav>
-            {{-- @include('partials.footer') --}}
+            @include('partials.footer')
         </div>
   </body>
 </html>

@@ -136,6 +136,11 @@ nav {
     }
 }
 
+img#footer-logo {
+    height: 5vh;
+    padding-right: 10px;
+    float: left;
+}
 
 /*
 body {
