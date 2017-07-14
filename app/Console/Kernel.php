@@ -201,7 +201,7 @@ class Kernel extends ConsoleKernel
 
             $rets->Disconnect();
 
-        })->dailyAt("19:56");
+        })->dailyAt("18:05");
     }
 
     /**
