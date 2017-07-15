@@ -58,6 +58,10 @@ table {
 
 /*end reset*/
 
+html {
+    font-size: 16px;
+}
+
 body {
     background-image: url("/images/one-small.jpg");
     background-size: cover;
@@ -67,25 +71,29 @@ body {
 #container {
     padding: 5%;
     background-color: #e4edf4;
-    max-width: 500px;
+    max-width: 1024px;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 p {
     font-family: 'Khula', sans-serif;
-    font-size: 2vh;
-    margin-top: 2vh;
+    font-size: .6rem;
+    margin-top: 1rem;
 }
 
 #intro {
     font-family: 'Satisfy', cursive;
-    font-size: 4vh;
-    margin-bottom: 1vh;
+    font-size: 1.25rem;
+    margin-bottom: .6rem;
 }
 
 h1 {
     margin: 0;
     font-family: 'Fjalla One', sans-serif;
-    font-size: 8vh;
+    font-size: 2rem;
 }
 
 label h2 {
@@ -125,145 +133,34 @@ nav {
     text-decoration: none;
     font-family: 'Khula', sans-serif;
     color: #2a4d7f;
-    font-size: 2vh;
+    font-size: .75rem;
 
 }
 
-@media only screen and (min-width: 600px)
+img#footer-logo {
+    height: 5vh;
+    padding-right: 10px;
+    float: left;
+}
+
+@media only screen and (min-width: 768px)
 {
+    html {
+        font-size: 18px;
+    }
     body {
         background-image: url('/images/one.jpg');
     }
 }
 
-img#footer-logo {
-    height: 5vh;
-    padding-right: 10px;
-    float: left;
-}
+@media only screen and (min-width: 1024px)
+{
+    html {
+        font-size: 24px;
+    }
 
-/*
-body {
-    background-image: url("/images/one-small.jpg");
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#container {
-    width: 90%;
-    box-sizing: border-box;
-    margin: 5vh auto;
-    min-height: 90vh;
-    display: block;
-    overflow: auto;
-    background-color: #e4edf4;
-    padding: 5vh;
-}            
-
-#heading {
-    float: left;
-    clear: both;
-    margin: 3vh auto;
-}
-
-#intro {
-    float: left;
-    clear: both;
-    font-family: 'Satisfy', cursive;
-    font-size: 4vh;
-}
-
-h1 {
-    margin: 0;
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 8vh;
-    float: left;
-    clear: both;
-}
-
-p {
-    font-family: 'Khula', sans-serif;
-    font-size: 2vh;
-    float: left;
-    clear: both;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-
-nav {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    float: left;
-    clear: both;
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: 3vh;
-}
-
-.items {
-    flex: 1;
-    text-align: center;
-    font-family: 'Khula', sans-serif;
-    height: 3vh;
-    line-height: 3vh;
-}
-
-.items a {
-    text-decoration: none;
-    font-family: 'Satisfy', cursive;
-}
-
-img#footer-logo {
-    height: 5vh;
-    padding-right: 10px;
-    float: left;
-}
-
-#form {
-    clear: both;
-}
-
-#form input[type="submit"] {
-    color: white;
-    background-color: #bed470;
-    border: solid white .3rem;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'Fjalla One', sans-serif;
-    text-align: center;
-    width: 70%;
-    padding: 5px;
-}
-
-#form input {
-    width: 100%;
-    padding: 10px;
-}
-
-@media only screen and (min-width : 768px){
     #container {
-        width: 40vw;
-        position: absolute;
-        left: 8vw;
+        min-width: 960px;
     }
-    
-    body {
-        background-image: url("/images/one.jpg");
-    }
-    
-    nav {
-        flex: 1;
-        flex-direction: row;
-    }
-}*/
+}
+

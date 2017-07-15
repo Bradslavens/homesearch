@@ -1,6 +1,4 @@
 {{-- variables, listingCount --}}
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,7 +30,7 @@
             </div>
             <form id="form" method="GET" action="{{route('listing.index')}}">
                 {{-- {{csrf_field()}} --}}
-                <label for="form"><h2>Search From  {{number_format($listingCount)}} Local Listings:</h2></label>
+                <label for="form"><h2>Search From  <span class="bold">{{number_format($listingCount)}}</span> Local Listings:</h2></label>
                 <input name="propertyQuery" type="search" placeholder="Enter an MLS#, Address, City, State or Zip">
                 
                 <input type="hidden" name="priceHigh" value="9999999999999">
