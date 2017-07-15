@@ -25,7 +25,7 @@
 
       <div class="nav-container">
           <nav>
-              <h1>Slavens Realty</h1>
+              <h1><a href="/">Slavens Realty</a></h1>
 
               <div data-toggle="filter" class="toggle">
                  <button>Filter</button>

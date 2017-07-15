@@ -10,10 +10,6 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
     <title>Slavens Realty Property Detail</title>
 @endsection
 
-@section('css')
-    
-@endsection
-
 @section('section')
     
 

@@ -25,9 +25,7 @@
 
       <div class="nav-container">
           <nav>
-              <h1>Slavens Realty</h1>
-
-              <a class="btn-urgent">Contact An Agent</a>
+              <a href="/"><h1>Slavens Realty</h1></a>
 
               <div class="toggle">
                  <button data-toggle="nav" class="rotatable">
