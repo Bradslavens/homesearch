@@ -104,8 +104,6 @@ class PHRetsTest extends TestCase
                     ]; 
 
         $results = $rets->Search('Property', 'RE_1', '(ListPrice=5000000+)|(L_StatusCatID=1),(L_IdxInclude=0,2)', ['Limit' => 1, 'Select' => $select]);
-
-        dd($results);
         
         foreach ($results as $r) 
         {

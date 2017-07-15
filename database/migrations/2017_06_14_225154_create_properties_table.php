@@ -34,26 +34,26 @@ class CreatePropertiesTable extends Migration
             $table->string('L_Status');
             $table->string('LM_Char10_1')->nullable(); // county
             $table->string('L_StatusCatID');
-            $table->string('LFD_Terms_42')->nullable();
+            $table->text('LFD_Terms_42')->nullable();
             $table->text('LR_remarks11')->nullable();
-            $table->string('LM_Char10_6')->nullable();
-            $table->string('LM_Char10_11')->nullable();
-            $table->string('LM_Char10_15')->nullable();
-            $table->string('LM_Char50_5')->nullable();
-            $table->string('LM_Int1_8')->nullable();
-            $table->string('LM_Int2_1')->nullable();
-            $table->string('LM_Int4_7')->nullable();
-            $table->string('LM_Int4_8')->nullable();
-            $table->string('LM_Int4_16')->nullable();
-            $table->string('LM_Dec_3')->nullable();
-            $table->string('LM_Dec_4')->nullable();
-            $table->string('LM_Dec_6')->nullable();
-            $table->string('LFD_Cooling_3')->nullable();
-            $table->string('LFD_Equipment_4')->nullable();
-            $table->string('LFD_LaundryLocation_15')->nullable();
+            $table->string('LM_Char10_6')->nullable(); // pets
+            $table->string('LM_Char10_11')->nullable(); // stories
+            $table->string('LM_Char10_15')->nullable(); // lot size
+            $table->string('LM_Char50_5')->nullable(); // senior community
+            $table->string('LM_Int1_8')->nullable(); // fire places
+            $table->string('LM_Int2_1')->nullable(); // year built
+            $table->string('LM_Int4_7')->nullable(); // garage spaces 
+            $table->string('LM_Int4_8')->nullable(); // parking total
+            $table->string('LM_Int4_16')->nullable(); // monthly total fees
+            $table->string('LM_Dec_3')->nullable(); // association fees
+            $table->string('LM_Dec_4')->nullable(); // homeowner total fees
+            $table->string('LM_Dec_6')->nullable(); // mello roos
+            $table->text('LFD_Cooling_3')->nullable();
+            $table->text('LFD_Equipment_4')->nullable();
+            $table->text('LFD_LaundryLocation_15')->nullable();
             $table->string('LFD_Pool_25')->nullable();
-            $table->string('LFD_SchoolDistrict_32')->nullable();
-            $table->string('LFD_View_44')->nullable();
+            $table->text('LFD_SchoolDistrict_32')->nullable();
+            $table->text('LFD_View_44')->nullable();
             // $table->string('LFD_PropertyCondition_305')->nullable();
             $table->integer('LM_Int2_6')->nullable();
             $table->string('L_IdxInclude')->nullable();

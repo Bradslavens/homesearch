@@ -41,7 +41,7 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
         </p>
     </div>
     <div class="propert-detail">
-        <p><span>Asking Price: </span>{{$property->L_AskingPrice}}</p>
+        <p><span>Asking Price: $</span>{{number_format($property->L_AskingPrice)}}</p>
     </div>
     <div class="propert-detail">
         <p><span>beds: </span> {{$property->LM_Int1_3}}</p>
@@ -83,16 +83,16 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
         <p><span>Parking Total Spaces: </span> {{$property->LM_Int4_8}}</p>
     </div>
     <div class="propert-detail">
-        <p><span>Listing Total Fees: </span> {{$property->LM_Int4_16}}</p>
+        <p><span>Listing Total Fees: $</span> {{number_format($property->LM_Int4_16)}}</p>
     </div>
     <div class="propert-detail">
-        <p><span>Home Owner Fees: </span> {{$property->LM_Dec_3}}</p>
+        <p><span>Home Owner Fees: $</span> {{number_format($property->LM_Dec_3)}}</p>
     </div>
     <div class="propert-detail">
-        <p><span>Home Owner Total Fees: </span> {{$property->LM_Dec_4}}</p>
+        <p><span>Home Owner Total Fees: $</span> {{number_format($property->LM_Dec_4)}}</p>
     </div>
     <div class="propert-detail">
-        <p><span>CDF Mello Roos: </span> {{$property->LM_Dec_6}}</p>
+        <p><span>CDF Mello Roos: $</span> {{number_format($property->LM_Dec_6)}}</p>
     </div>
     <div class="propert-detail">
         <p><span>Cooling: </span> {{$property->LFD_Cooling_3}}</p>
