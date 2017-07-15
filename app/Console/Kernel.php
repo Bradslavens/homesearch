@@ -55,7 +55,7 @@ class Kernel extends ConsoleKernel
             Log::info('started query');
 
             // set limit
-            $limit = 2000;
+            $limit = 1000;
             
                
             $select = [
@@ -238,7 +238,7 @@ class Kernel extends ConsoleKernel
 
             $rets->Disconnect();
 
-        })->dailyAt("19:00");
+        })->dailyAt("22:00");
     }
 
     /**
