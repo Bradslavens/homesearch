@@ -47,6 +47,8 @@ class Property extends Model
                 'LFD_SchoolDistrict_32',
                 'LFD_View_44',
                 'LFD_PropertyCondition_305', 
+                'LM_Int2_3',
+                'LM_Int2_6',
             ];
     
     public function images()

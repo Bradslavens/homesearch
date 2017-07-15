@@ -35,7 +35,7 @@ class CreatePropertiesTable extends Migration
             $table->string('LM_Char10_1')->nullable(); // county
             $table->string('L_StatusCatID');
             $table->string('LFD_Terms_42')->nullable();
-            $table->string('LR_remarks11')->nullable();
+            $table->text('LR_remarks11')->nullable();
             $table->string('LM_Char10_6')->nullable();
             $table->string('LM_Char10_11')->nullable();
             $table->string('LM_Char10_15')->nullable();
@@ -54,8 +54,8 @@ class CreatePropertiesTable extends Migration
             $table->string('LFD_Pool_25')->nullable();
             $table->string('LFD_SchoolDistrict_32')->nullable();
             $table->string('LFD_View_44')->nullable();
-            $table->string('LFD_PropertyCondition_305')->nullable();
-            $table->string('LM_Int2_6')->nullable();
+            // $table->string('LFD_PropertyCondition_305')->nullable();
+            $table->integer('LM_Int2_6')->nullable();
             $table->string('L_IdxInclude')->nullable();
             $table->timestamps();
         });

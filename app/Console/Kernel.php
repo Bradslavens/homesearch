@@ -33,7 +33,8 @@ class Kernel extends ConsoleKernel
             $yesterday = Carbon::yesterday()->toAtomString();
 
             // $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+),(L_IdxInclude=0,2)"; //select only those that can be show on the internet
-            $query = '(L_StatusCatID=1),(L_IdxInclude=0,2)'; //select only those that can be show on the internet
+            // $query = '(L_StatusCatID=1),(L_IdxInclude=0,2)'; //select only those that can be show on the internet
+            $query = '(L_StatusCatID=1),(L_IdxInclude=0,2),(L_AskingPrice=15000000+)'; //testing
             
 
             // connect to RETS
@@ -96,17 +97,20 @@ class Kernel extends ConsoleKernel
                         'LFD_Pool_25',
                         'LFD_SchoolDistrict_32',
                         'LFD_View_44',
-                        'LFD_PropertyCondition_305',
+                        // 'LFD_PropertyCondition_305',
                         'L_IdxInclude',
                     ]; 
                         
-            $results1 = $rets->Search('Property', 'RE_1', $query, 
-                    [
-                        'select' => $select, 'Count' => 2, 
-                        'Format' => 'COMPACT-DECODED', 
-                        'PropertyQueryType=DMQL2',
-                    ]);
-
+            $results1 = $rets->Search(
+                        'Property', 
+                        'RE_1', 
+                        $query, 
+                        [
+                            'select' => $select, 'Count' => 2, 
+                            'Format' => 'COMPACT-DECODED', 
+                            'PropertyQueryType=DMQL2',
+                        ]
+                    );
 
              // log::info('ended query - count = ');
              log::info('ended query - count = ' . $results1->getTotalResultsCount());
@@ -119,7 +123,18 @@ class Kernel extends ConsoleKernel
 
                 Log::info('o = ' . $o);
 
-                $results = $rets->Search('Property', 'RE_1', $query, ['Limit' => $limit, 'select' => $select, 'Offset' => $o, 'Format' => 'COMPACT-DECODED', 'PropertyQueryType=DMQL2',]);
+                $results = $rets->Search(
+                        'Property', 
+                        'RE_1', 
+                        $query, 
+                        [
+                            'Limit' => $limit, 
+                            'select' => $select, 
+                            'Offset' => $o, 
+                            'Format' => 'COMPACT-DECODED', 
+                            'PropertyQueryType=DMQL2',
+                        ]
+                    );
 
                 foreach ($results as $r) 
                 {
@@ -152,6 +167,28 @@ class Kernel extends ConsoleKernel
                                 'L_Status' => $r['L_Status'], 
                                 'L_StatusCatID' => $r['L_StatusCatID'], 
                                 'L_IdxInclude' => $r['L_IdxInclude'],
+                                'LM_Int2_6' => $r['LM_Int2_6'], 
+                                'LFD_Terms_42' => $r['LFD_Terms_42'],
+                                'LR_remarks11' => $r['LR_remarks11'],
+                                'LM_Char10_6' => $r['LM_Char10_6'],
+                                'LM_Char10_11' => $r['LM_Char10_11'],
+                                'LM_Char10_15' => $r['LM_Char10_15'],
+                                'LM_Char50_5' => $r['LM_Char50_5'],
+                                'LM_Int1_8' => $r['LM_Int1_8'],
+                                'LM_Int2_1' => $r['LM_Int2_1'],
+                                'LM_Int4_7' => $r['LM_Int4_7'],
+                                'LM_Int4_8' => $r['LM_Int4_8'],
+                                'LM_Int4_16' => $r['LM_Int4_16'],
+                                'LM_Dec_3' => $r['LM_Dec_3'],
+                                'LM_Dec_4' => $r['LM_Dec_4'],
+                                'LM_Dec_6' => $r['LM_Dec_6'],
+                                'LFD_Cooling_3' => $r['LFD_Cooling_3'],
+                                'LFD_Equipment_4' => $r['LFD_Equipment_4'],
+                                'LFD_LaundryLocation_15' => $r['LFD_LaundryLocation_15'],
+                                'LFD_Pool_25' => $r['LFD_Pool_25'],
+                                'LFD_SchoolDistrict_32' => $r['LFD_SchoolDistrict_32'],
+                                'LFD_View_44' => $r['LFD_View_44'],
+                                // 'LFD_PropertyCondition_305',
                             ];
 
                     if($property == null)
@@ -201,7 +238,7 @@ class Kernel extends ConsoleKernel
 
             $rets->Disconnect();
 
-        })->dailyAt("18:05");
+        })->hourlyAt(31);
     }
 
     /**

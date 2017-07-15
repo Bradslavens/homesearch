@@ -32,7 +32,7 @@ class ListingController extends Controller
                     ['L_AskingPrice','<=', preg_replace("/[^0-9]/","", urldecode($request->priceHigh))],
                     ['L_AskingPrice', '>=', preg_replace("/[^0-9]/","", urldecode($request->priceLow))],
                     ['LM_Int1_3', '>=',  $request->bedrooms],
-                    ['LM_Int2_6', '>=', $request->bathrooms],
+                    ['LM_Int2_6', '>=', $request->bathrooms],  // getting null
                     ['L_StatusCatID', 'Active'],
                 ])
                 ->orWhere([
