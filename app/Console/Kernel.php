@@ -32,8 +32,8 @@ class Kernel extends ConsoleKernel
 
             $yesterday = Carbon::yesterday()->toAtomString();
 
-            // $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+),(L_IdxInclude=0,2)"; //select only those that can be show on the internet
-            $query = '(L_StatusCatID=1),(L_IdxInclude=0,2)'; //select only those that can be show on the internet
+            $query = "(L_UpdateDate=". $yesterday . "+)|(L_ListingDate=". $yesterday . "+),(L_IdxInclude=0,2)"; //select only those that can be show on the internet
+            // $query = '(L_StatusCatID=1),(L_IdxInclude=0,2)'; //select only those that can be show on the internet
             // $query = '(L_StatusCatID=1),(L_IdxInclude=0,2),(L_AskingPrice=15000000+)'; //testing
             
 
