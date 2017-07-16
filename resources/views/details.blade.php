@@ -16,14 +16,12 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
     {{-- property list --}}
     <h2>Property Detail</h2>
 
-    <img id="large-image" src="{{$property->images()->first()->link}}">
-
-    <div class="small-image-container">
+    <div id="slides">
         @foreach($property->images as $image)
-            <img class="small-image" src="{{$image->link}}">
+            <img src="{{$image->link}}">
         @endforeach
     </div>
-
+    
     {{-- remarks --}}
     <p><span>Remarks: </span>{{$property->LR_remarks11}}</p>
 
