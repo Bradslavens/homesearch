@@ -31,7 +31,7 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
             <div class="details1">
                 <div class="summary">
                     <div class="price">
-                        $ {{ number_format($listing->L_AskingPrice)}}
+                        $ {{ number_format((float)$listing->L_AskingPrice)}}
                     </div>
                     <div class="address">
                         Address:
