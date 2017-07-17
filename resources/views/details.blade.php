@@ -21,6 +21,11 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
             <img src="{{$image->link}}">
         @endforeach
     </div>
+
+
+    <a class="slidesjs-previous slidesjs-navigation" href="#" title="Previous"><</a>
+    <a class="slidesjs-next slidesjs-navigation" href="#" title="Next">></a>
+
     
     {{-- remarks --}}
     <p><span>Remarks: </span>{{$property->LR_remarks11}}</p>

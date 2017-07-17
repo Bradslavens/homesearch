@@ -35,10 +35,10 @@ $(document).ready(function(){
     });
 
     $("#slides").slidesjs({
-      width: 940,
-      height: 528,
+      width: 768,
+      height: 451,
       navigation: {
-          active: true,
+          active: false,
             // [boolean] Generates next and previous buttons.
             // You can set to false and use your own buttons.
             // User defined buttons must have the following:
