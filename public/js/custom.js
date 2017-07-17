@@ -38,7 +38,7 @@ $(document).ready(function(){
       width: 768,
       height: 451,
       navigation: {
-          active: false,
+          active: true,
             // [boolean] Generates next and previous buttons.
             // You can set to false and use your own buttons.
             // User defined buttons must have the following:
