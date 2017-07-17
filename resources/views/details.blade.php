@@ -83,7 +83,7 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
         <p><span>Home Owner Fees: $</span> {{number_format($property->LM_Dec_3)}}</p>
     </div>
     <div class="propert-detail">
-        <p><span>Home Owner Total Fees: $</span> {{number_format($property->LM_Dec_4)}}</p>
+        <p><span>Home Owner Total Fees: $</span> {{number_format((float)$property->LM_Dec_4)}}</p>
     </div>
     <div class="propert-detail">
         <p><span>CDF Mello Roos: $</span> {{number_format($property->LM_Dec_6)}}</p>
