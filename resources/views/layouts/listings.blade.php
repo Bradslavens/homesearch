@@ -23,83 +23,19 @@
   </head>
   <body>
 
-      <div class="nav-container">
-          <nav>
-              <h1><a href="/">Slavens Realty</a></h1>
-
-              <div data-toggle="filter" class="toggle">
-                 <button>Filter</button>
-              </div>
-
-              <div class="toggle">
-                 <button data-toggle="nav" class="rotatable">
-                   <span class="bar">&horbar;</span>
-                   <span class="bar">&horbar;</span>
-                   <span class="bar">&horbar;</span>
-                 </button>
-              </div>
-
-          </nav>
-          
-          <div data-target="nav" class="links">
-            <a href="/">Home</a>
-            <a href="{{route('contact.create')}}">Contact</a>
-            <a href="{{route('careers')}}">Careers</a>
-            <a href="about">About</a>
-          </div>
-
-          <div data-target="filter" id="filter">
-            <form method="GET" action="{{route('listing.index')}}">
-
-                {{-- {{csrf_field()}} --}}
-
-                {{-- previous query  --}}
-                @if(session('query'))
-                  <input type="hidden" name="propertyQuery" value="{{session('query')}}">
-                @endif
-                <div class="form-groups">
-
-                  <div class="form-group">
-                    <label for="priceLow">Price Low</label>
-                    $<input type="text" name="priceLow" value="$0">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="priceHigh">Price High</label>
-                    $<input type="text" name="priceHigh" value="$1,000,000,000">
-                  </div>
-
-                </div>
-
-                <div class="form-groups">
-                  <div class="form-group">
-                    <label for="bedrooms">Min Bedrooms</label>
-                    <input type="text" value="0" name="bedrooms">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="bathrooms">Min Baths</label>
-                    <input type="text" value="0" name="bathrooms">
-                  </div>
-                </div>
-
-                {{-- add more --}}
-                <div class="form-group">
-                    <input type="submit" value="Filter">
-                </div>
-                
-
-            </form>
-          </div>
-
-
-      </div>
+    @yield('nav')
 
     @yield('section')
     
     @yield('footer')
     
+    
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <script src="/js/Slides-SlidesJS-3/Slides-SlidesJS-3/source/jquery.slides.min.js"></script>
     
     <script src="/js/custom.js"></script>
   

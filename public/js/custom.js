@@ -48,5 +48,9 @@ $(document).ready(function(){
             // [string] Can be either "slide" or "fade".
       },
     });
-
 });
+
+// for back buttons
+function goBack() {
+  window.history.back();
+}

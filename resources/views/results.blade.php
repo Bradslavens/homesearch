@@ -14,6 +14,10 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
     <link rel="stylesheet" type="text/css" href="/css/listings.css">
 @endsection
 
+@section('nav')
+    @include('partials.nav-filter')
+@endsection
+
 @section('section')
     
 

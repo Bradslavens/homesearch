@@ -61,7 +61,7 @@ footer {
     line-height: 5px;
 }
 
-nav, .toggle button, .links, nav h1, p {
+nav, .toggle button, .links, nav h1, p, .nav-inverse .nav-button {
     background-color: black;
     color: white;
     padding: 8px 16px;
@@ -156,8 +156,6 @@ ul.slidesjs-pagination {
     a.slidesjs-previous.slidesjs-navigation {
         left: 20px;
     }
-
-
 /*
     #slide {
         position: relative;

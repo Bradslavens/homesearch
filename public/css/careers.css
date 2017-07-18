@@ -1,74 +1,55 @@
 
-* {
-    box-sizing: border-box;
+/*minor reset */
+h1, h2, h3 {
+    padding: 0;
+    font-family: none;
 }
 
-body {
-    background: #ced7e5;
-    background-image: url("/images/one.jpg");
-    padding: 3vw;
-    background-size: cover;
+#container {
+    padding: 3vh 5vw;
 }
 
-h1, h1:first-of-type + h2 {
-    margin: 0;
-    float: left;
-    clear: both;
-    color: white;
-}
-
-header h1 {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 8vh;
-}
-
-
-header h2 {
-    font-family: 'Satisfy', cursive;
-}
-
-
-
-#careers-container {
-    clear: both;
-    background-color: #e4edf4;
+h1, h2 {
     font-family: 'Spectral', serif;
-    padding: 4vw;
-    margin: 0 auto;
-
-}
-
-.job-container {
-    background-color: #5b5f7a;
-    color: white;
-    padding: 5vw;
-    font-size: .7em;
-    border: solid white 10px;
-}
-
-.job-container article a {    
-    margin-top: 1rem;
-    color: white;
-    background-color: #bed470;
-    border: solid white .3rem;
-    height: 100%;
-    width: 7rem;
-    text-decoration: none;
-    padding: .5rem;
     display: inline-block;
-    font-size: 1rem;
-    font-family: 'Satisfy', cursive;
+    color: white;
+    padding: 1vh 2vw;
+    background-color: #4759e5;
+}
+
+h1 {
+    background-color: #f44e42;
+}
+
+h2 {
+    background: #f44e42;
+    font-size: 1.25rem;
+}
+
+h2 {
+    margin: 2vh 0;
+    background: #4759e5;
+    color: white;
+}
+
+h3 {
+    font-family: 'Spectral', serif;
+    margin-bottom: 1vh;
+}
+
+ul {
+    list-style: initial;
+    padding: 0 4vw;
+}
+
+#container a {
+    background: #f44e42;
+    padding: 1vh 2vh;
+    display: block;
+    width: 7rem;
     text-align: center;
+    margin: 2vh 0;
+    cursor: pointer;
 }
 
 
-
-
-@media only screen and (min-width: 768px)
-{                
-    .job-container {
-        font-size: 1em;
-        width: 50vw;
-        margin: 0 auto;
-    }
-}
