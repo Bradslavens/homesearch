@@ -76,4 +76,11 @@ label {
     margin-bottom: 1vh;
 }
 
+input#submit {
+    border: none;
+    background: blue;
+    color: white;
+    padding: 1vh 2vw;
+    width: 150px;
+}
 
