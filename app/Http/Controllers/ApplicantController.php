@@ -27,9 +27,11 @@ class ApplicantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($position)
     {
-        return view('apply');
+        $position = strtr($position, "-", " ");
+
+        return view('apply', ['position' => $position]);
     }
 
     /**

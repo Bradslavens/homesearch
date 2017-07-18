@@ -19,7 +19,9 @@ Route::resource('listing', 'ListingController');
 
 Route::get('careers/{source?}', 'CareersController@index')->name('careers');
 
-Route::resource('careers/apply', 'ApplicantController');
+Route::resource('careers/apply', 'ApplicantController', ['except' => ['create']]);
+
+Route::get('careers/apply/for/{position}', 'ApplicantController@create')->name('apply.create');
 
 Route::resource('contact', 'ContactController');
 

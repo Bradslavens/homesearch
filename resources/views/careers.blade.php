@@ -15,11 +15,11 @@
 
 @section('section')
     
+    <header>
+        <h1>Current Career Opportunities:</h1>
+    </header>
     
     <div id="container">
-        <header>
-            <h1>Current Career Opportunities:</h1>
-        </header>
 
         <section>
 
@@ -43,7 +43,7 @@
                 <li>Pass a criminal background check (no criminal record)</li>
             </ul>
 
-            <a href="{{route('apply.create')}}">Apply Now</a>
+            <a href="/careers/apply/for/Transaction-Coordinator">Apply Now</a>
 
         </section>
         <section>
@@ -69,8 +69,8 @@
                 <li>High Ethical Standards</li>
             </ul>
 
-            <a href="{{route('apply.create')}}">Apply Now</a>
-            
+            <a href="/careers/apply/for/Licensed-Agent">Apply Now</a>
+
         </section>
     </div>
     {{-- container --}}
