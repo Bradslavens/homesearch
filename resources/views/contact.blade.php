@@ -9,11 +9,13 @@
     <link rel="stylesheet" type="text/css" href="/css/careers.css">
 @endsection
 
+@section('nav')
+    @include('partials.nav-inverse')
+@endsection
+
 @section('section')
-    
 
     <header>
-        <h1>Slavens Realty</h1>
         <h2>Contact Form</h2>
     </header>
 
@@ -26,8 +28,8 @@
             </ul>
         </div>
     @endif
-    
-    <div id="careers-container">
+
+    <div id="container">
         <form id="form" class="job-container" method="POST" action="{{route('contact.store')}}">
             {{ csrf_field() }}
 
@@ -56,9 +58,9 @@
         </form>
     </div>
 
-    @endsection
-    
-    
-    @section('footer')
-        @include('partials.footer2')
-    @endsection
+@endsection
+
+
+@section('footer')
+    @include('partials.footer2')
+@endsection

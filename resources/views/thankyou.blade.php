@@ -9,27 +9,30 @@
     <link rel="stylesheet" type="text/css" href="/css/careers.css">
 @endsection
 
+@section('nav')
+    @include('partials.nav-inverse')
+@endsection
+
 @section('section')
     
 
     <header>
-        <h1>Slavens Realty</h1>
-        <h2>Thank You!</h2>
+        <h1>Thank You!</h1>
     </header>
-    
+
     <div id="careers-container">
         @if(session('message'))
 
-        <div id="message">
+        <p>
             {{session('message')}}
-        </div>
+        </p>
             
         @endif
     </div>
 
-    @endsection
-    
-    
-    @section('footer')
-        @include('partials.footer2')
-    @endsection
+@endsection
+
+
+@section('footer')
+    @include('partials.footer2')
+@endsection
