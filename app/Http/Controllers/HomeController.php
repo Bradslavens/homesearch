@@ -10,6 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
+        session(['notbot' => 'notbot']);
+        
         $listingCount = Property::where('L_StatusCatID', 'Active')->count();
 
         return view('welcome', ['listingCount' => $listingCount]);

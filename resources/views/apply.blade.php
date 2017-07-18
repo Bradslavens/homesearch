@@ -49,8 +49,8 @@
             </div>
 
             <div class="form-group">
-                <label for="real">email</label>
-                <input type="email" class="form-control" name="real" id="email" placeholder="email" required>
+                <label for="email">email</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="email" required>
             </div>
 
             <div class="form-group">
@@ -58,7 +58,6 @@
                 <input type="text" class="form-control" name="position" id="position" value="{{$position}}" required>
             </div>
 
-            <input type="hidden" name="email" value="honeypot">
             <input type="submit" id="submit" value="Apply">
 
         </form>

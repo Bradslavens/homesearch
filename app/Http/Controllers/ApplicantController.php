@@ -29,6 +29,13 @@ class ApplicantController extends Controller
      */
     public function create($position)
     {
+        // fight bots
+        // 
+        if(session('notbot' !== 'notbot'))
+        {
+            return redirect(route('careers'));
+        }
+
         $position = strtr($position, "-", " ");
 
         return view('apply', ['position' => $position]);
