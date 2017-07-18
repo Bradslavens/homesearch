@@ -44,10 +44,9 @@ class ApplicantController extends Controller
     {
         $this->validate($request, [
                 'name' => 'required|max:255',
-                'email' => 'required|email',
+                'real' => 'required|email',
                 'licenseNumber' => 'numeric',
             ]);
-
 
         $applicant = new \App\Applicant;
         $applicant->name = $request->name;
