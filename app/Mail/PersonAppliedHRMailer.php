@@ -33,6 +33,6 @@ class PersonAppliedHRMailer extends Mailable
     {
 
         return $this->from(env('BROKER_EMAIL'))
-            ->view('mail.PersonAppliedHR');
+            ->view('mail.personAppliedHR');
     }
 }
