@@ -30,7 +30,8 @@ class ApplicantController extends Controller
     public function create($position)
     {
         // fight bots
-        if(session('notbot') !== 'notbot')
+        // 
+        if(session('isBot') !== 'no')
         {
             return redirect(route('careers'));
         }

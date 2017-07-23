@@ -20,7 +20,7 @@ class CareersController extends Controller
         // set sessiion 4
         
         session(['source' => $source]);
-        session(['notbot' => 'notbot']);
+        session(['isBot' => 'no']);
 
         return view('careers');
     }

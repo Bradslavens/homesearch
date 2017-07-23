@@ -24,7 +24,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        if(session('notbot') !== 'notbot')
+        if(session('isBot') !== 'no')
         {
             return redirect('/');
         }

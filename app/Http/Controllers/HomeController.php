@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        session(['notbot' => 'notbot']);
+        session(['isBot' => 'no']);
         
         $listingCount = Property::where('L_StatusCatID', 'Active')->count();
 
@@ -21,6 +21,7 @@ class HomeController extends Controller
     public function propertyList(Request $request)
     {
 
+        
         // get list of properties based on search request
 
         return view('home');
