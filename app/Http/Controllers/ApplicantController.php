@@ -50,7 +50,7 @@ class ApplicantController extends Controller
     {
         $this->validate($request, [
                 'name' => 'required|max:255',
-                'real' => 'required|email',
+                'email' => 'required|email',
                 'licenseNumber' => 'numeric',
             ]);
 
