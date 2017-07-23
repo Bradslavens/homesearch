@@ -6,4 +6,5 @@
     <li>License Number: {{$applicant->licenseNumber}}</li>
     <li>Email: {{$applicant->email}}</li>
     <li>Phone: {{$applicant->phone}}</li>
+    test
 </ul>
