@@ -28,6 +28,6 @@ class SendCommentToBroker
      */
     public function handle(ContactMade $event)
     {
-        Mail::to(env('BROKER_EMAIL'))->send(new BrokerContactInfo($event->contact));
+        Mail::to(env('BROKER_GMAIL'))->send(new BrokerContactInfo($event->contact));
     }
 }

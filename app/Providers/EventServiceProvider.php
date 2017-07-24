@@ -14,11 +14,11 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         'App\Events\PersonApplied' => [
-            'App\Listeners\SendThankYouEmail',
+            // 'App\Listeners\SendThankYouEmail',
             'App\Listeners\SendHREmail',
         ],
         'App\Events\ContactMade' => [
-            'App\Listeners\SendThankYouToContact',
+            // 'App\Listeners\SendThankYouToContact',
             'App\Listeners\SendCommentToBroker',
         ],
     ];

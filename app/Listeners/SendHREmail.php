@@ -28,6 +28,6 @@ class SendHREmail
      */
     public function handle(PersonApplied $event)
     {
-        Mail::to(env('BROKER_EMAIL'))->send(new PersonAppliedHRMailer($event->applicant));
+        Mail::to(env('BROKER_GMAIL'))->send(new PersonAppliedHRMailer($event->applicant));
     }
 }
