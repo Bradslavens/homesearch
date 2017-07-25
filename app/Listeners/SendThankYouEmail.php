@@ -27,7 +27,7 @@ class SendThankYouEmail
      * @return void
      */
     public function handle(PersonApplied $event)
-    {
+    {        
         Mail::to($event->applicant->email)->send(new ThankYouForApplying($event->applicant));
     }
 }

@@ -27,7 +27,7 @@ class SendThankYouToContact
      * @return void
      */
     public function handle(ContactMade $event)
-    {
+    {        
         Mail::to($event->contact->email)->send(new ThankYouForContactingUs($event->contact));
     }
 }
