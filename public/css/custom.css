@@ -156,30 +156,12 @@ ul.slidesjs-pagination {
     a.slidesjs-previous.slidesjs-navigation {
         left: 20px;
     }
-/*
-    #slide {
-        position: relative;
+
+    div#slide-container {
+        width: 50%;
+        margin: 0 auto;
     }
 
-    .slidesjs-previous, .slidesjs-next {
-        position: absolute;
-        top: 40%;
-        left: 1vw;
-        color: black;
-    }
-
-    .slidesjs-previous:after {
-        content: "<";
-    }
-
-
-    .slidesjs-next {
-        right: 1vw;
-    } 
-
-    .slidesjs-next:after {
-        content: ">";
-    } */
 }
 
 @media only screen and (min-width: 1024px)

@@ -20,10 +20,12 @@ $listings->appends(['propertyQuery' => $propertyQuery])->links()
     {{-- property list --}}
     <h2>Property Detail</h2>
 
-    <div id="slides">
-        @foreach($property->images as $image)
-            <img src="{{$image->link}}">
-        @endforeach
+    <div id="slide-container">
+        <div id="slides">
+            @foreach($property->images as $image)
+                <img src="{{$image->link}}">
+            @endforeach
+        </div>
     </div>
 
     {{-- remarks --}}
