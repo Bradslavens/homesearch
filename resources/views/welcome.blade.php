@@ -45,6 +45,25 @@
                 <div class="items"><a href="{{route('contact.create')}}">Contact Us</a></div>
                 <div class="items"><a href="{{route('careers')}}">Careers</a></div>
             </nav>
+
+            <div id="service-areas">
+                <p>
+                    <h4>Search the Following Zip Codes:</h4>
+
+                    {{-- for comma --}}
+                    <?php 
+                        $c = count($properties); 
+                        $i = 0; 
+                    ?>
+
+                    @foreach($properties as $property)
+
+                        <a href="/listing?propertyQuery={{$property->L_Zip}}&priceHigh=9999999999999&priceLow=0&bedrooms=0&bathrooms=0">{{$property->L_Zip}}</a>
+                        {{-- add a comma to the end except last one --}}
+                        <?php if(++$i !== $c){ echo ","; } ?>
+                    @endforeach
+                </p>
+            </div>
             @include('partials.footer')
         </div>
   </body>

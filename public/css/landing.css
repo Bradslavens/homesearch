@@ -143,6 +143,15 @@ img#footer-logo {
     float: left;
 }
 
+#service-areas {
+    font-family: 'Khula', sans-serif;
+    font-size: .6rem;
+}
+
+#service-areas h4 {
+    margin-bottom: .6rem;
+}
+
 @media only screen and (min-width: 768px)
 {
     html {

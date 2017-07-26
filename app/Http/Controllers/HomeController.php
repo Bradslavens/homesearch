@@ -14,7 +14,9 @@ class HomeController extends Controller
         
         $listingCount = Property::where('L_StatusCatID', 'Active')->count();
 
-        return view('welcome', ['listingCount' => $listingCount]);
+        $properties = Property::where('L_StatusCatID', 'Active')->select('L_Zip')->groupBy('L_Zip')->orderBy('L_Zip', 'desc')->get();
+
+        return view('welcome', ['listingCount' => $listingCount, 'properties' => $properties]);
     }
 
     
