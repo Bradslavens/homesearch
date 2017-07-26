@@ -14,6 +14,8 @@ h1, h2, h3 {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 h1, h2 {
@@ -68,6 +70,9 @@ ul {
     -ms-flex-direction: column;
     flex-direction: column;
     height: 10vh;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 
     font-family: 'Khula', sans-serif;
 }
@@ -77,12 +82,24 @@ label {
     margin-bottom: 1vh;
 }
 
+input {
+
+}
+
 input#submit {
     border: none;
     background: blue;
     color: white;
-    padding: 1vh 2vw;
+    padding: 10px;
     width: 150px;
     margin-top: 2vh;
+    border-radius: 5px;
+}
+
+.form-control {
+    margin: 5px 0;
+    padding: 10px;
+    border: solid lightgray 1.5px;
+    border-radius: 5px;
 }
 
