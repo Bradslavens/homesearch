@@ -20,7 +20,53 @@
     </header>
     
     <div id="container">
+        <section>
+            <h2>Licensed Realtor - Part Time</h2>
+            <p>
+                Come join our team of dedicated agents, where we seek the best deals in Buying, Selling and Leasing Residential Homes for
+                our treasured clients in San Diego!
+            </p>
+            <p>
+                Who said Real estate has to be boring? Don’t waste your time and energy at a
+                place that doesn’t deserve you! Work with us to nurture your talent to the fullest.
+            </p>
+            <h3>What we offer:</h3>
+            <ul>
+                <li>Flexibility to work from home</li>
+                <li>Experienced and cooperative broker to work with</li>
+                <li>Broker support to guide you and assist you</li>
+                <li>Competitive commission</li>
+            </ul><br>
+            <h3>All we want from you is:</h3>
+            <ul>
+                <li>A CA BRE Real Estate License in good standing</li>
+                <li>Realtor® Association Member (or willing to become one)</li>
+                <li>A reliable as well as insured car to guarantee maximum safety</li>
+                <li>An amalgamation of persistence, unfettered determination, enthusiasm
+                and a never-say- die attitude</li>
+                <li>A high moral conduct and uncompromising ethical standards</li>
+            </ul>
+            <br>
+            <p>
+                Are you willing to undertake the task at
+                hand?
+            </p>
 
+            <h3>All you need to do is:</h3>
+            <ul>
+                <li>Target new clients to bring into Slavens Realty for an unparalleled real
+                estate experience</li>
+                <li>Work with the goal to convert prospective leads into sales</li>
+                <li>Show property to clients with patience, relevant knowledge and
+                commitment</li>
+                <li>Efficiently and cordially communicate with other agents, company staff and
+                third parties</li>
+                <li>Supervise the closing of transactions, offering assistance till the very end</li>
+            </ul>
+
+            <p>If you think you qualify - Click <a href="/careers/apply/for/Agent">Apply Now</a></p>
+
+        </section>
         <section>
 
             <h2>Transaction Coordinator - Part Time</h2>
@@ -46,32 +92,7 @@
             <a href="/careers/apply/for/Transaction-Coordinator">Apply Now</a>
 
         </section>
-        <section>
-
-            <h2>Licensed Real Estate Agent - Part Time or Full Time</h2>
-            <h3>Duties include:</h3>
-            <ul>
-                <li>Prospecting for new clients to bring into the firm</li>
-                <li>Converting prospects into leads and sales</li>
-                <li>Converting company leads into sales</li>
-                <li>Showing property to clients</li>
-                <li>Writing Purchase and Listing Agreements</li>
-                <li>Meeting inspectors</li>
-                <li>Communicating with other agents, company staff and 3rd parties</li>
-                <li>Overseeing the closing of transactions</li>
-            </ul>
-            <h3>Requirements</h3>
-            <ul>
-                <li>CA BRE Real Estate License in good standing</li>
-                <li>Reliable car and insurance</li>
-                <li>Realtor<span class="trademark">&reg;</span></li>
-                <li>Peristant, Enthusiastic, Determined</li>
-                <li>High Ethical Standards</li>
-            </ul>
-
-            <a href="/careers/apply/for/Licensed-Agent">Apply Now</a>
-
-        </section>
+        
     </div>
     {{-- container --}}
 
