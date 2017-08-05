@@ -29,3 +29,7 @@ Route::get('about', function()
 {
     return view('about');
 });
+
+Route::get('agents', function(){
+    return view('agents');
+});

@@ -40,11 +40,8 @@
                 
                 <input type="submit" value="SEARCH">
             </form>
-            <nav>
-                <div class="items"><a href="about">About Us</a></div>
-                <div class="items"><a href="{{route('contact.create')}}">Contact Us</a></div>
-                <div class="items"><a href="{{route('careers')}}">Careers</a></div>
-            </nav>
+            
+            @include('partials.nav-main')
 
             <div id="service-areas">
                 <p>
