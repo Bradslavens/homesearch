@@ -42,7 +42,7 @@ class ListingController extends Controller
                     ['LM_Int1_3', '>=',  $request->bedrooms],
                     ['LM_Int2_6', '>=', $request->bathrooms],
                     ['L_StatusCatID', 'Active'],
-                ])->simplePaginate(3); 
+                ])->sortByDesc('L_ListingDate')->simplePaginate(3); 
         }
         else
         {

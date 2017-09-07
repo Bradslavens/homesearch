@@ -10,7 +10,11 @@
 @endsection
 
 @section('nav')
-    @include('partials.nav-nav-main')
+    <div id="nav">
+        <img src="images/logo.png">
+        <i class="fa fa-bars" aria-hidden="true" data-toggle="nav"></i>
+    </div>
+    @include('partials.nav-main')
 @endsection
 
 @section('section')

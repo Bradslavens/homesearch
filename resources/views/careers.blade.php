@@ -21,7 +21,7 @@
     
     <div id="container">
         <section>
-            <h2>Licensed Realtor - Part Time</h2>
+            <h2>Licensed Realtor&reg;</h2>
             <p>
                 Come join our team of dedicated agents, where we seek the best deals in Buying, Selling and Leasing Residential Homes for
                 our treasured clients in San Diego!
@@ -65,31 +65,6 @@
             </ul>
 
             <p>If you think you qualify - Click <a href="/careers/apply/for/Agent">Apply Now</a></p>
-
-        </section>
-        <section>
-
-            <h2>Transaction Coordinator - Part Time</h2>
-            <h3>Duties include:</h3>
-            <ul>
-                <li>Checking documents for accuracy and signatures</li>
-                <li>Communicating well with agents and clients</li>
-                <li>Maintaining confidentiality with clients</li>
-                <li>Data Entry</li>
-                <li>Using proprietary and 3rd party software systems to complete tasks</li>
-            </ul>
-            <h3>Requirements</h3>
-            <ul>
-                <li>Excellent typing and data entry skills</li>
-                <li>Excellent communiction skills</li>
-                <li>Windows and Internet Skills</li>
-                <li>Attention to detail</li>
-                <li>Moderate Temperment</li>
-                <li>Able to handle stress and not take things personally</li>
-                <li>Pass a criminal background check (no criminal record)</li>
-            </ul>
-
-            <a href="/careers/apply/for/Transaction-Coordinator">Apply Now</a>
 
         </section>
         

@@ -65,7 +65,7 @@ $factory->define(App\Property::class, function (Faker\Generator $faker)
         'LFD_Pool_25' => $faker->word(),
         'LFD_SchoolDistrict_32' => $faker->word(),
         'LFD_View_44' => $faker->word(),
-        'LFD_PropertyCondition_305' => $faker->word(),
+        // 'LFD_PropertyCondition_305' => $faker->word(),
         'LM_Int2_6' => $faker->randomNumber(1),
         'L_IdxInclude' => $faker->numberBetween(0,2),
     ];

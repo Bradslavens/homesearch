@@ -1,0 +1,43 @@
+#nav img {
+    height: 35px;
+}
+
+div#nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+i.fa.fa-bars {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #0f75bc;
+    cursor: pointer;
+}
+
+nav {
+    font-family: 'Khula', sans-serif;
+    font-size: .75rem;
+    display: block;
+    background: white;
+    padding: 10px;
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+    color: #0f75bc;
+    cursor: pointer;
+}
+
+.items {
+    padding: 3px;
+    border-bottom: lightblue solid .5px;
+    margin-top: 10px;
+}

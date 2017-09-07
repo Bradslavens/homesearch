@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
 
+    <script src="https://use.fontawesome.com/0c8602578f.js"></script>
+
 
     @yield('css')
 
